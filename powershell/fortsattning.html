@@ -12,7 +12,19 @@
     <h1>Powershell Djupare Kunskaper</h1>
     
     <h2>Loopar</h2>
-    <p>Loopar används för att upprepa en viss kodblock flera gånger. Här är två exempel på en for-loop:</p>
+    <p>Loopar används för att upprepa en viss kodblock flera gånger. Här är tre exempel på en loopar:</p>
+    <h3>while-loop</h3>
+    <pre>
+        <code>
+            $counter =0;
+            while($counter -le 10) {
+                Write-Host $counter
+                $counter++;
+            }
+        </code>
+    </pre>
+
+    <h3>for-loop</h3>
     <pre>
         <code>
             for ($i = 1; $i -le 5; $i++) {
@@ -20,6 +32,8 @@
             }
         </code>
     </pre>
+    <h3>foreach-loop</h3>
+
     <pre>
         <code>
             $fruits = "Apple", "Banana", "Orange"
