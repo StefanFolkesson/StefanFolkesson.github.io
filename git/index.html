@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git en startsida</title>
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+    <h1>Git Lektion - First Lesson</h1>
+    <p>
+        För att starta upp en git lokalt.
+        Via powershell
+        Öppna upp powershell
+        Göra en global konfigurering på namn och epost.
+        se till att anvädnda det namn du har på Github och den epost du kopplat dit.
+    </p>
+    <code>
+        git config --global user.email "stefan.folkesson@ntig.se"
+        git config --global user.name "StefanFolkesson"
+    </code>
+    <p>
+        För att kontrollera vilka inställningar du har just nu.
+    </p>
+    <code>
+        git config --global -l
+    </code>
+    <p>
+        Skapa mappen du vill ha din repository i
+    </p>
+    <code>
+        mkdir repon
+    </code>
+    <p>
+        eller skpa den i explorer
+        se till att du "står" i mappen i powershell
+    </p>
+    <code>
+        cd sökvägen
+    </code>
+    <p>
+        när du står i rätt mapp kan du starta upp (initiera) en repository
+    </p>
+    <code>
+        git init
+    </code>
+    <p>
+        Skapa en fil att lägga in i repon enklaste är att gå in i utforskaren och skapa en fil. kalle.txt eller liknande.
+        sedan skall du lägga till filen till din repo
+    </p>
+    <code>
+        git add kalle.txt
+    </code>
+    <p>
+        eller
+    </p>
+    <code>
+        git add *
+    </code>
+    <p>
+        detta väljer alla filer i mappen.
+        du skall nu "spara" ned din första repo det gör man med kommandot commit.
+    </p>
+    <code>
+        git commit -m "first"
+    </code>
+    <p>
+        du måste ha ett namn på commiten försök att vara någorlunda beskrivande.
+    </p>
+    <h2>(skapa en repo på Github)</h2>
+    <p>
+        nu har du gjort det du behöver lokalt. nu skall vi skapa en tom repo på github.
+        logga in på github och skapa en ny repo. OBS! den måste vara tom så lägg inte till någon readme eller någon git ignore.
+        kopiera namnet på din repo. exempel (https://github.com/StefanFolkesson/anewrepo.git)
+    </p>
+    <p>
+        tillbaka till den lokala repon
+        vi skall nu koppla den till github repon.
+    </p>
+    <code>
+        git remote add origin https://github.com/StefanFolkesson/anewrepo.git
+    </code>
+    <p>
+        för att kontrollera så allting blev ok kan man skriva
+    </p>
+    <code>
+        git remote -v
+    </code>
+    <p>
+        till sist skall vi pusha vår lokala repo till github det gör vi med push# detta kommando är det du använder så fort du
+        vill lägga upp din repo på github.
+    </p>
+    <code>
+        git push origin master
+    </code>
+    <h2>Branches</h2>
+    <p>
+        Git branches are used to develop features isolated from each other. The master branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+    </p>
+    <code>
+        git checkout -b feature_x
+    </code>
+    <code>
+        git checkout master
+    </code>
+    <code>
+        git checkout -d feature_x // tar bort
+    </code>
+    <code>
+        git push origin feature_x //annars finns den inte på hub
+    </code>
+</body>
+</html>
