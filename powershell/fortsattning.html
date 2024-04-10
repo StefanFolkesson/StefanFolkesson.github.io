@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Powershell Fortsatta Kunskaper</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+
+</head>
+<body>
+    <h1>Powershell Djupare Kunskaper</h1>
+    
+    <h2>Loopar</h2>
+    <p>Loopar används för att upprepa en viss kodblock flera gånger. Här är två exempel på en for-loop:</p>
+    <pre>
+        <code>
+            for ($i = 1; $i -le 5; $i++) {
+                Write-Host "Detta är iteration $i"
+            }
+        </code>
+    </pre>
+    <pre>
+        <code>
+            $fruits = "Apple", "Banana", "Orange"
+
+            foreach ($fruit in $fruits) {
+                Write-Host "I like $fruit"
+            }
+        </code>
+    </pre>
+
+    <h2>Villkor</h2>
+    <p>Villkor används för att utföra olika handlingar beroende på om ett visst villkor är sant eller falskt. Här är ett exempel på en if-sats:</p>
+    <pre>
+        <code>
+            $number = 10
+            if ($number -gt 5) {
+                Write-Host "Talet är större än 5"
+            } else {
+                Write-Host "Talet är mindre än eller lika med 5"
+            }
+        </code>
+    </pre>
+    
+    <h2>Funktioner</h2>
+    <p>Funktioner används för att organisera och återanvända kod i PowerShell. Här är ett exempel på hur du definierar och använder en funktion:</p>
+    <pre>
+        <code>
+            function SayHello($name) {
+                Write-Host "Hej, $name!"
+            }
+            
+            SayHello "Alice"
+        </code>
+    </pre>
+    
+    <h2>Mer Powershell Hantering</h2>
+    <p>Här är mer exempel på Powershell-hanteringskod:</p>
+    <pre>
+        <code>
+            # Skapa en ny mapp
+            New-Item -ItemType Directory -Path "C:\Mapp"
+
+            # Skapa en ny fil
+            New-Item -ItemType File -Path "C:\Mapp\fil.txt"
+
+            # Kopiera en fil
+            Copy-Item -Path "C:\Mapp\fil.txt" -Destination "C:\Mapp\kopia.txt"
+
+            # Flytta en fil
+            Move-Item -Path "C:\Mapp\fil.txt" -Destination "C:\Mapp\NyMapp\fil.txt"
+
+            # Ta bort en fil
+            Remove-Item -Path "C:\Mapp\fil.txt"
+
+            # Skapa en ny textfil och skriv till den
+            Set-Content -Path "C:\Mapp\textfil.txt" -Value "Detta är innehållet i textfilen"
+        </code>
+    </pre>
+    
+</body>
+</html>
