@@ -36,6 +36,16 @@
         </code>
     </pre>
     
+    <h2>Explaining Static</h2>
+    <p>Static methods belong to the class rather than to any specific instance of the class. 
+        They can be called without creating an instance of the class.</p>
+    </p>
+    
+    <h2>Explaining Final</h2>
+    <p>A final variable can only be assigned a value once. Once assigned, the value of a final variable cannot be changed. 
+        A final method cannot be overridden in a subclass. A final class cannot be subclassed.
+    </p>
+
     <h2>Declaring Methods in the Same Class</h2>
     <p>Methods can be declared inside the same class. Here's an example:</p>
     <p>If the method calling the method is static the method also has to be static</p>
@@ -92,7 +102,25 @@
             }
         </code>
     </pre>
-    
+
+    <h2>Declaring final variables in an external class</h2>
+    <p>Final variables can be declared in an external class. Here's an example:</p>
+    <pre>
+        <code>
+            FILE: MyClass.java
+            public class MyClass {
+                public static void main(String[] args) {
+                    // Variable invocation
+                    System.out.println(ExternalClass.MY_CONSTANT);
+                }
+            }
+
+            FILE: ExternalClass.java
+            public class ExternalClass {
+                public static final int MY_CONSTANT = 10;
+            }
+        </code>
+    </pre>
     <h2>Declaring a NewClass and instantiating it.</h2>
     <p>If you declare a class and instantiate it id does not have to be static. Here is an example:</p>
     <pre>
