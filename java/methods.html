@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java Methods</title>
+</head>
+<body>
+    <h1>Java Methods</h1>
+    
+    <h2>Methods with Return Type</h2>
+    <p>A method in Java can return a value of a specific data type. Here's an example:</p>
+    <pre>
+        <code>
+            public int add(int a, int b) {
+                return a + b;
+            }
+        </code>
+    </pre>
+    
+    <h2>Methods with Void Return Type</h2>
+    <p>A method in Java can also have a void return type, which means it doesn't return any value. Here's an example:</p>
+    <pre>
+        <code>
+            public void printMessage(String message) {
+                System.out.println(message);
+            }
+        </code>
+    </pre>
+    
+    <h2>Methods with Parameters</h2>
+    <p>Methods in Java can take input parameters. Here's an example:</p>
+    <pre>
+        <code>
+            public int multiply(int a, int b) {
+                return a * b;
+            }
+        </code>
+    </pre>
+    
+    <h2>Declaring Methods in the Same Class</h2>
+    <p>Methods can be declared inside the same class. Here's an example:</p>
+    <p>If the method calling the method is static the method also has to be static</p>
+    <pre>
+        <code>
+            public class MyClass {
+                public static void main(String[] args) {
+                    // Method invocation
+                    myMethod();
+                }
+                static void myMethod() {
+                    // Method implementation
+                }
+            }
+        </code>
+    </pre>
+    
+    <h2>Declaring Methods in an External Class</h2>
+    <p>Methods can also be declared in an external class. The external class cant be public. And if the method calling the method is static the method has to be static</p> 
+    <p>        Here's an example:</p>
+    <pre>
+        <code>
+            public class MyClass {
+                public static void main(String[] args) {
+                    // Method invocation
+                    ExternalClass.myMethod();
+                }
+            }
+            class ExternalClass {
+                static void myMethod() {
+                    // Method implementation
+                }
+            }
+        </code>
+    </pre>
+    
+    <h2>Declaring Methods in a New Public Class</h2>
+    <p>You can declare a new public class with its own methods in another file. Here's an example:</p>
+    <pre>
+        <code>
+            FILE: MyClass.java
+            public class MyClass {
+                public static void main(String[] args) {
+                    // Method invocation
+                    NewClass.myMethod();
+                }
+            }
+
+            FILE: NewClass.java
+            public class NewClass {
+                static void myMethod() {
+                    // Method implementation
+                }
+            }
+        </code>
+    </pre>
+    
+    <h2>Declaring a NewClass and instantiating it.</h2>
+    <p>If you declare a class and instantiate it id does not have to be static. Here is an example:</p>
+    <pre>
+        <code>
+            public class MittProgram {
+                public static void main(String[] args) {
+                    NewClass nc = new NewClass();
+                    nc.aFunction();
+                }
+            }
+            class NewClass{            
+                void aFunction(){
+                    System.out.println("asdad");
+                }
+            }
+        </code>
+    </pre>
+    
+
+</body>
+</html>
