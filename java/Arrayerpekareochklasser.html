@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java Methods</title>
+</head>
+<body>
+    <h1>Java Arrayer</h1>
+    
+    <h2>Enkla datatyper</h2>
+    <p>Datatyper som inte skrivs med stor bokstav kallas enkla datatyper. int,cher,float, etc. </p>
+    <p>när du dekarerar en enkal datatyp allokerar du minne till den direkt och variabelnamnet "pekar" på den allokeringen.</p>
+    <p>Bild1</p>
+    <pre>
+        <code>
+            int tal = 10;
+            // tal innehåller 10
+        </code>
+    </pre>
+
+    <h2>Arrayer</h2>
+    <p>En array är en hel hoper med enkla datatyper och namnet på arrayen kan således inte peka på alla variabler på en gång. Så istället så "pekar" variabelnamnet på en array på adressen i minnet där du allokerat utrymmet för arrayen.</p>
+    <p>Om du inte allokerar något utrymme till arrayen på en gång kommer variabeln peka på null.</p>
+    <pre>
+        <code>
+            int [] arr;
+            // arr innehåller null
+            int [] brr = new int[10];
+            // brr innehåller början på adressen till utrymmet som är allokerat med new int[10]
+        </code>
+    </pre>
+    <p>När du deklarerat en array till int kommer den nu hoppa frammåt en int i minnet för varje adressering du anger:</p>
+    <pre>
+        <code>
+            brr[0] = 10;
+            // brr[0] tar adressen i brr och lägger till 0*längden på int för att läsa av/ändra värdet. 
+            brr[1] = 20;
+            // brr[1] är således brr+1*landen på int och där srkiver vi in 20.
+            // brr flyttas aldrig!!! brr pekar alltid på starten av arrayen
+        </code>
+    </pre>
+
+    <h2>Arrayer och Metoder</h2>
+    <p>När du deklarerar en metod kan </p>
+
+
+</body>
+</html>
