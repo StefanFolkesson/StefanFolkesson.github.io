@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Powershell Fortsatta Kunskaper</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+
+</head>
+<body>
+    <h1>Powershell Filhanering</h1>
+    
+    <h2>Läsa filer</h2>
+
+    Jag kommer använda filen <a href="stader.txt">stader.txt</a>. Spara ned den i samma mapp som du har dia ps1 filer.
+
+    <p>När man skall läsa från filer behöver man först ta reda på sökvägen till filen. Dvs vart filen ligger på hårddisken. För enkelhets skull utgår vi från att filen som du skall läsa av ligger i samma mapp som din ps1 fil.</p>
+    <p>Då kommer anropet se ut såhär:</p>
+    <pre>
+        <code>
+            $innehall = Get-Content -Path "stader.txt"
+        </code>
+    </pre>
+
+    <p>Då kommer innehållet i stader.txt läsas in i variabeln $innehåll. Varje rad ligger som en egen enhet i variabeln så man kan sen läsa av varje rad genom att skriva:</p>
+    <pre>
+        <code>
+            foreach($rad in $innehåll){
+                ## Gör något med innehållet. Vi skriver bara ut det just nu.
+                Write-Host $rad
+            }
+        </code>
+    </pre>
+
+    <p>I min fil stader.txt ligger det även information om mängden innevånare i staden.</p>
+    <pre>
+        <code>
+            Borås - 113721
+            Eskilstuna - 98573
+            Gävle - 77843
+            ...
+            ...
+        </code>
+    </pre>
+    <p>Ps.Om det är så att inte åäö syns som de skall spara den filen som 'ISO-8859-1' eller 'UTF-8' något format borde fungera för dig. Ds.</p>
+    <p>Problemet är ett jag inte vill skriva ut siffrorna jag vill bara skriva ut städernas namn. För att göra det måste jag dela på texten. Det gör jag genom:</p>
+    <pre>
+        <code>
+            foreach($rad in $innehåll){
+                ## Delar upp innehållet i stad och befolkning och använder - som avdelare. 
+                $stad, $befolkning = $rad -split '-'
+                ## $rad -split '-'
+                ## betyder dela på raden på minustecken
+                ## $stad,$befolkning = 
+                ## betyder lägg första delen i $stad och andra delen i $befolkning
+                ## Nu han vi skriva ut staden bara
+                Write-Host $stad
+            }
+        </code>
+    </pre>
+        <h2>Översätta strängar till heltal</h2>
+        <p> Nu skulle jag vilja skriva ut alla städer som har minst 100 000 invånare. </p>
+        <p>Delar av svaret har vi i beforlning den innehåller talet men det är i datatypen String vilket gör att man inte kan räkna med den. </p>
+        <p>För att kunna räkna med den mpste vi översätta(konvertera) den till heltal. det gör man såhär:</p>
+    <pre>
+        <code>
+            $befolkning = [int]$befolkning
+        </code>
+    </pre>
+    <p>Så ny skulle jag kunna kontrollera om staden har minst 100000 invånare:</p>
+    <pre>
+        <code>
+            if([int]$befolkning -gt 100000){
+                Write-Host $stad
+            }
+        </code>
+    </pre>
+</body>
+</html>
