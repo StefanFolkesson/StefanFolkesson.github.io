@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Private,Public och Protected</title>
+</head>
+<body>
+    <h1>Private,Public och Protected</h1>
+    
+    <h2>Public</h2>
+    <p>Public innebär att alla har tillgång till metoden eller variabeln så länge du skapat en instans av klassen.</p>
+    <pre>
+        <code>
+            public class Klass{
+                public int tal;
+
+                public int getTal(){
+                    return tal;
+                }
+            }
+
+            Klass k1 = new Klass();
+            k1.tal=101; // Detta är inga problem
+            System.out.println(getTal()); // Skriver ut 101
+        </code>
+    </pre>
+
+    <h2>Private</h2>
+    <p>Något som är deklarerat som private kan bara användas i klassen.</p>
+    <pre>
+        <code>
+            public class Klass{
+                <b>private</b> int tal;
+
+                public int getTal(){
+                    return tal;
+                }
+            }
+
+            Klass k1 = new Klass();
+            k1.tal=101; // Detta är inte längre tillåtet
+            System.out.println(getTal()); // Men instancen av klassen har tillgång till variabeln.
+        </code>
+    </pre>
+    <p>Då använder man så kallade getters och setters för att läsa och sätta variablerna. I dessa kan man även då sätta begränsningar på input och kasta fel.</p>
+    <pre>
+        <code>
+                public void setTal(int tal){
+                    if(tal<0){
+                        throw new IllegalArgumentException("Jag vill inte ha negativa tal");
+                    }
+                    this.tal = tal;
+                }
+        </code>
+    </pre>
+    <p> Detta skulle man kunna fånga upp i en try catch.</p>
+    <p>Det bör även tilläggas att saker som är Provate inte heller kommer med i ett arv. Så om jag ärver denna klass till en ny klass så kommer jag inte komma åt provata variabler eller metoder.</p>
+
+    <h2>Protected</h2>
+    <p>Protected betyder att variabeln eller metoden är begränsad till att bara kunna nås av Instansen eller arvet av klassen. Men i Java är Protected utökad till att kunna nås av paketet den ligger i. </p>
+    <p>Vilket i princip innebär att du kommer komma åt den i hela ditt program om du inte delar upp det i olika paket.</p>
+
+</body>
+</html>

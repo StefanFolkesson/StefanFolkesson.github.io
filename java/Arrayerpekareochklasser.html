@@ -40,8 +40,28 @@
     </pre>
 
     <h2>Arrayer och Metoder</h2>
-    <p>När du deklarerar en metod kan </p>
+    <p>När du deklarerar en metod kan du välja att skicka med en array som indata.</p>
+    <pre>
+        <code>
+            void hanteraArray(int [] arr){
+                ...
+            }
+        </code>
+    </pre>
+    <p>Då kommer du skicka med adressen till arayen. Inte arrayen i sig. Detta innebär att när vi ändrar på data i metoden i arrayen så kommer den ändras utanför metoden med. </p>
+    <pre>
+        <code>
+            int [] brr = {1,2,3};
+            System.out.println(brr[0]);
+            hanteraArray(brr);
+            System.out.println(brr[0]); 
 
+            void hanteraArray(int [] arr){
+                arr[0]++;
+            }
+            // Kommer skriva ut 1 sen 2 då värdet i brr ändras. 
+        </code>
+    </pre>
 
 </body>
 </html>
