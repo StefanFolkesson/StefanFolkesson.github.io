@@ -1,17 +1,3 @@
-New-Item -ItemType Directory -Path .\test -Force
-Write-Host "Målkatalogen har skapats."
-$files = Get-ChildItem -Path .\ -Filter *.ps1
-foreach ($file in $files) {
-    $response = Read-Host "Vill du flytta filen $($file.Name)? (Ja/Nej)"
-    if ($response -eq "Ja") {
-        Move-Item -Path $file.FullName -Destination .\test -Force
-        Write-Host "Filen $($file.Name) har flyttats till test-katalogen."
-    } else {
-        Write-Host "Filen $($file.Name) flyttades inte."
-    }
-}
-
-
 <!DOCTYPE html>
 <html>
 <head>
