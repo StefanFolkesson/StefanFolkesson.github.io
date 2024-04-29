@@ -1,0 +1,67 @@
+New-Item -ItemType Directory -Path .\test -Force
+Write-Host "Målkatalogen har skapats."
+$files = Get-ChildItem -Path .\ -Filter *.ps1
+foreach ($file in $files) {
+    $response = Read-Host "Vill du flytta filen $($file.Name)? (Ja/Nej)"
+    if ($response -eq "Ja") {
+        Move-Item -Path $file.FullName -Destination .\test -Force
+        Write-Host "Filen $($file.Name) har flyttats till test-katalogen."
+    } else {
+        Write-Host "Filen $($file.Name) flyttades inte."
+    }
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Powershell Filhantering</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+
+</head>
+<body>
+    <h1>Powershell Filhantering version 2</h1>
+    
+    <h2>Läsa filer</h2>
+    <p>Om man vill läsa vilka filer som ligger i en mapp använder man Get-ChildItem.</p>
+    <p>Med parametrarna -Path talar man om var man vill leta efter filer(.\ betyder här).</p>
+    <p>Med parametrarna -Filter talar man om vilka filer man vill se (*.ps1 betyder alla filer som slutar på .ps1).</p>
+    <p>Exempel:</p>
+    <pre>
+        <code>
+            Get-ChildItem -Path .\ -Filter *.ps1
+        </code>
+    </pre>
+    <h2>Skapa filer</h2>
+
+    <p>När man skall skapa filer i powershell använder man New-Item den har några parametrar</p>
+    <ul>
+        <li>-ItemType Directory för att skapa en katalog</li>
+        <li>-Path .\test för att skapa katalogen</li>
+        <li>-Force för att skapa katalogen även om den redan finns</li>
+        <li>-ItemType File för att skapa en fil</li>            
+    </ul>
+    <p>Exempel:</p>
+    <pre>   
+        <code>
+            New-Item -ItemType Directory -Path .\test -Force
+            Write-Host "Målkatalogen har skapats."
+        </code>
+    </pre>
+    <h2>Flytta filer</h2>
+    <p>För att flytta filer från en mapp till en annan </p>
+    <p>Exempel:</p>
+    <pre>
+        <code>
+            Get-ChildItem -Path .\ -Filter *.ps1 | ForEach-Object {
+                Move-Item -Path $_.FullName -Destination .\test -Verbose
+            }
+        </code>
+    </pre> 
+    <p>Här ser ni även hur man arbetar med pipelining i powershell. ( | )</p>
+    <p>Detta innebär att jag för varje pbject som kommer ut från Get-ChildItem kommer att köra Move-Item.</p>
+    <p>Och $_.FullName är en inbyggd variabel som innehåller sökvägen till filen.</p>   
+</body>
+</html>
