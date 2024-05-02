@@ -15,30 +15,93 @@
         <code>
             class Klass1{
                 int attribut;
+
+                public void metod(){
+                    attribut = 3;   // Fungerar bra.
+                }
             }
             class Klass2 extends Klass1{
 
             }
 
-            Klass2 K2 = new Klass2();
-            K2.attribut; // Fungerar mycket bra.
+            Klass2 k2 = new Klass2();
+            k2.attribut; // Fungerar mycket bra.
+            k2.metod(); // Fungerar bra 
         </code>
     </pre>
     <h2>Private</h2>
-    <p>Om du sätter ett attribut eller metod till private kommer du bara åt </p>
+    <p>Om du sätter ett attribut eller metod till private kommer du bara åt dessa via den egna klassen eller en instans av klassen.</p>
     <pre>
         <code>
             class Klass1{
-                int attribut;
+                private int attribut;
+
+                public void metod(){
+                    attribut = 3;   // Fungerar bra då vi är i klassens instans. 
+                }
             }
             class Klass2 extends Klass1{
 
             }
 
-            Klass2 K2 = new Klass2();
-            K2.attribut; // Fungerar mycket bra.
+            Klass1 k1 = new Klass1();
+            Klass2 k2 = new Klass2();
+            k2.attribut; // Fungerar inta alls.
+            k1.attribut; // Fungerar inte heller för vi är utanför klassen.
+            k1.metod();  // Fungerar bra
+            k2.metod();  // Fungerar bra.. Men gör kanske inte vad du vill
         </code>
     </pre>
+    <h2>Protected</h2>
+    <p>Protected är en egenskap som gör att attributet eller metoden är nåbar i ett arv. I Java betyder även detta att så länge du är i samma paket kommer du åt attributen eller metoderna.</p>
+    <pre>
+        <code>
+            class Klass1{
+                protected int attribut;
+
+                public void metod(){
+                    attribut = 3;   // Fungerar bra då vi är i klassens instans. 
+                }
+            }
+            class Klass2 extends Klass1{
+
+            }
+            Klass1 k1 = new Klass1();
+            Klass2 k2 = new Klass2();
+            k2.attribut; // Fungerar eftersom vi är i paketet.
+            k1.attribut; // Fungerar eftersom vi är i paketet.
+            k1.metod();  // Fungerar bra
+            k2.metod();  // Fungerar bra.. Men gör kanske inte vad du vill
+        </code>
+    </pre>
+    <h2>Polymorfism</h2>
+    <p>Att göra överlagringar är ett ganska vanligt sätt att göra fler ingångar.</p>
+    <p>Det reserverade ordet för att markera att en metod är @Override.</p>
+    <pre>
+        <code>
+            class Klass1{
+                protected int attribut;
+
+                public void metod(){
+                    attribut = 3;   // Fungerar bra då vi är i klassens instans. 
+                }
+            }
+            class Klass2 extends Klass1{
+
+                @Override
+                public void metod(){
+                    attribut = 4;   // Fungerar bra då vi är i klassens instans. 
+                }
+
+            }
+            Klass1 k1 = new Klass1();
+            Klass2 k2 = new Klass2();
+            k1.metod();  // Kör metod i Klass1
+            k2.metod();  // Kör metid i Klass2
+
+        </code>
+    </pre>
+
 </body>
 </html>
 
