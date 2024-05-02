@@ -24,6 +24,21 @@
             K2.attribut; // Fungerar mycket bra.
         </code>
     </pre>
+    <h2>Private</h2>
+    <p>Om du sätter ett attribut eller metod till private kommer du bara åt </p>
+    <pre>
+        <code>
+            class Klass1{
+                int attribut;
+            }
+            class Klass2 extends Klass1{
+
+            }
+
+            Klass2 K2 = new Klass2();
+            K2.attribut; // Fungerar mycket bra.
+        </code>
+    </pre>
 </body>
 </html>
 
