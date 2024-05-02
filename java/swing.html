@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java Swing Grundläggande exempel</title>
+</head>
+<body>
+    <h1>Java Swing Grundläggande exempel</h1>
+
+    <h2>Introduktion till Java Swing</h2>
+    <p>
+        Java Swing är ett användargränssnittsbibliotek för Java-programmeringsspråket.
+        Det används för att skapa grafiska användargränssnitt (GUI) för Java-applikationer.
+    </p>
+    <p>Utgångsklassen är JFrame som är själva fönstret som du använder för att bygga upp din applikation.</p>
+    <p>Det finns en mängd olika komponenter som du kan använda för att skapa ditt GUI, till exempel knappar, textfält, listor och mycket mer.</p>
+    <p>Java Swing är en del av Java Foundation Classes (JFC) som är en samling av bibliotek för att skapa avancerade GUI-applikationer.</p>    
+    <p>Du kan även rita egna element i Java Swing.</p>
+    <h2>Exempel på Java Swing</h2>
+    <p>
+        Nedan finns ett enkelt exempel på hur man skapar en knapp med Java Swing:
+    </p>
+    <pre>
+        <code>
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class SwingExample {
+    public static void main(String[] args) {
+        // Skapa en ny JFrame
+        JFrame frame = new JFrame("Java Swing Exempel");
+
+        // Skapa en knapp
+        JButton button = new JButton("Klicka här");
+
+        // Lägg till knappen i JFrame
+        frame.getContentPane().add(button);
+
+        // Ställ in JFrame-egenskaper
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+    }
+}
+        </code>
+    </pre>
+    <h2>Att arbeta med ett arv istället</h2>
+    <p>Jag föredrar oftast att arbeta med JFrame som ett arv istället då det blir lite mer intuitivt.</p>
+    <pre>
+        <code>
+import javax.swing.JButton;
+import javax.swing.JFrame;
+public class SwingExample extends JFrame {
+    public SwingExample() {
+        super("Java Swing Exempel");
+        JButton button = new JButton("Klicka här");
+        add(button);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(300, 200);
+        setVisible(true);
+    }
+    public static void main(String[] args) {
+        new SwingExample();
+    }
+}
+        </code>
+    </pre>  
+    <p>Samma exampel men med Jframe som ett arv.</p>
+    <p>Detta är en smaksak och det är bra att känna till båda sätten att arbeta med Swing.</p>
+    <h2>En utgångsklass</h2>
+    <p>Så här kan du skapa en utgångsklass för ditt Java Swing-program:</p>
+    <pre>
+        <code>  
+import javax.swing.JFrame;
+public class Main extends JFrame {
+    public Main() {
+        super("Java Swing Exempel"); // Sätter titeln på fönstret
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Ser till att krysset stänger fönstret
+        setSize(300, 200); // Sätter storleken på fönstret
+        setLocation(100, 100); // Sätter positionen på fönstret
+        setRezinable(false); // Gör att fönstret inte kan ändra storlek
+        setVisible(true); // Gör fönstret synligt
+    }
+    public static void main(String[] args) {
+        new Main(); // Skapar en instans av Main
+    }
+}
+        </code>
+    </pre>            
+</body>
+</html>
