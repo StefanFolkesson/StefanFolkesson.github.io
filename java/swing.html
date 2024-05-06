@@ -85,6 +85,52 @@ public class Main extends JFrame {
     }
 }
         </code>
-    </pre>            
+    </pre>   
+    <h2>Ritar på Jframen</h2>
+    <p>Om man vill kan man använda draw eller fill metoder. </p>
+    <pre>
+        <code>
+    import java.awt.Color;
+    import java.awt.Graphics;
+
+    public class DrawingExample extends JFrame {
+        public DrawingExample() {
+            super("Java Swing Exempel");
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setSize(300, 200);
+            setLocation(100, 100);
+            setResizable(false);
+            setVisible(true);
+        }
+
+        @Override
+        public void paint(Graphics g) {
+            super.paint(g);
+            // Fill a rectangle
+            g.setColor(Color.RED);
+            g.fillRect(50, 50, 100, 100);
+            // Draw a rectangle
+            g.setColor(Color.BLUE);
+            g.drawRect(200, 50, 100, 100);
+            // Fill an oval
+            g.setColor(Color.GREEN);
+            g.fillOval(50, 200, 100, 100);
+            // Draw an oval
+            g.setColor(Color.YELLOW);
+            g.drawOval(200, 200, 100, 100);
+            // Draw a line
+            g.setColor(Color.ORANGE);
+            g.drawLine(50, 350, 250, 350);
+            // Draw a string
+            g.setColor(Color.BLACK);
+            g.drawString("Hello, World!", 50, 400);
+        }
+
+        public static void main(String[] args) {
+            new DrawingExample();
+        }
+    }
+        </code> 
+    </pre>
 </body>
 </html>
