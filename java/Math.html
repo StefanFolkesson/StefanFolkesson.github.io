@@ -1,0 +1,112 @@
+<!--
+    Här tänkte hag skriva om Klassen Math i Java.
+    Och beskriva de flesta av dess metoder. Och ge exempel på dem.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Klassen Math</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+    <h1>Klassen Math i Java</h1>
+    <p>Klassen Math innehåller flera metoder för att utföra matematiska operationer i Java. Här är några exempel på vanliga metoder:</p>
+    <h2>Absolutvärde</h2>
+    <p>Metoden abs() returnerar absolutvärdet av ett tal. Här är ett exempel:</p>
+    <pre>
+        <code>
+            double x = -10.5;
+            double result = Math.abs(x);
+            System.out.println("Absolutvärdet av " + x + " är " + result);
+        </code>
+    </pre>
+    <h2>Avrundning</h2>
+    <p>Metoden round() avrundar ett tal till närmaste heltal. Här är ett exempel:</p>
+    <pre>
+        <code>
+            double x = 10.5;
+            long result = Math.round(x);
+            System.out.println("Avrundningen av " + x + " är " + result);
+        </code>
+    </pre>
+    <h2>Max och Min</h2>
+    <p>Metoderna max() och min() returnerar det största respektive minsta av två tal. Här är ett exempel:</p>
+    <pre>
+        <code>
+            int x = 10;
+            int y = 20;
+            int max = Math.max(x, y);
+            int min = Math.min(x, y);
+            System.out.println("Det största talet är " + max);
+            System.out.println("Det minsta talet är " + min);
+        </code>
+    </pre>
+    <h2>Exponentiering</h2>
+    <p>Metoden pow() returnerar ett tal upphöjt till en viss exponent. Här är ett exempel:</p>
+    <pre>
+        <code>
+            double x = 2;
+            double y = 3;
+            double result = Math.pow(x, y);
+            System.out.println(x + " upphöjt till " + y + " är " + result);
+        </code>
+    </pre>
+    <h2>Kvadratroten</h2>
+    <p>Metoden sqrt() returnerar kvadratroten av ett tal. Här är ett exempel:</p>
+    <pre>
+        <code>
+            double x = 16;
+            double result = Math.sqrt(x);
+            System.out.println("Kvadratroten av " + x + " är " + result);
+        </code>
+    </pre>
+    <h2>Trigonometriska funktioner</h2>
+    <p>Klassen Math innehåller också metoder för att beräkna trigonometriska funktioner, såsom sin(), cos() och tan(). Här är ett exempel:</p>
+    <pre>
+        <code>
+            double x = Math.PI / 2;
+            double sin = Math.sin(x);
+            double cos = Math.cos(x);
+            double tan = Math.tan(x);
+            System.out.println("Sin(" + x + ") = " + sin);
+            System.out.println("Cos(" + x + ") = " + cos);
+            System.out.println("Tan(" + x + ") = " + tan);
+        </code>
+    </pre>
+    <h2>Avrundning uppåt och nedåt</h2>
+    <p>Metoderna ceil() och floor() avrundar ett tal uppåt respektive nedåt till närmaste heltal. Här är ett exempel:</p>
+    <pre>
+        <code>
+            double x = 10.5;
+            double y = 10.1;
+            double z = 10.9;
+            double ceil = Math.ceil(x);
+            double floor = Math.floor(x);
+            System.out.println("Uppåt: " + ceil);
+            System.out.println("Nedåt: " + floor);
+            ceil = Math.ceil(y);
+            floor = Math.floor(y);
+            System.out.println("Uppåt: " + ceil);
+            System.out.println("Nedåt: " + floor);
+            ceil = Math.ceil(z);
+            floor = Math.floor(z);
+            System.out.println("Uppåt: " + ceil);
+            System.out.println("Nedåt: " + floor);
+        </code> 
+    </pre>
+    <h2>Random</h2>
+    <p>Metoden random() returnerar ett slumpmässigt tal mellan 0 och 1. Här är ett exempel:</p>
+    <pre>
+        <code>
+            double random = Math.random();
+            System.out.println("Slumptal: " + random);
+            double random2 = Math.random() * 90 + 10;
+            System.out.println("Slumptal mellan 10 och 100: " + random2);
+        </code>     
+    </pre>
+
+    <p>Klassen Math innehåller flera andra metoder för att utföra matematiska operationer i Java. För en fullständig lista över metoder, se <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">Java API</a>.</p>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!--
+Här tänkte jag skriva om Metoder i Java.
+Och beskriva olika typer av metoder som finns i Java.
+Såsom metoder utan returvärde, metoder med returvärde, metoder med parametrar och metoder med flera parametrar.
+Är skall jag även adressera roller och användningsområden för metoder.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Metoder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+
+        <h1>Metoder i Java</h1>
+        <p>En metod är en samling av instruktioner som utför en viss uppgift. I Java finns det flera olika typer av metoder, såsom metoder utan returvärde, metoder med returvärde, metoder med parametrar och metoder med flera parametrar.</p>
+    
+        <h2>Metoder utan returvärde</h2>
+        <p>Metoder utan returvärde används för att utföra en viss uppgift utan att returnera ett värde. Här är ett exempel på en metod utan returvärde:</p>
+        <pre>
+            <code>
+                public class Main {
+                    public static void sayHello() {
+                        System.out.println("Hello, World!");
+                    }
+                    public static void main(String[] args) {
+                        sayHello();
+                    }
+                }
+            </code>
+        </pre>
+        <h2>Metoder med returvärde</h2>
+        <p>Metoder med returvärde används för att utföra en viss uppgift och returnera ett värde. Här är ett exempel på en metod med returvärde:</p>
+        <pre>
+            <code>
+                public class Main {
+                    public static int add(int x, int y) {
+                        return x + y;
+                    }
+                    public static void main(String[] args) {
+                        int sum = add(5, 3);
+                        System.out.println("Summan är: " + sum);
+                    }
+                }
+            </code>
+        </pre>
+        <h2>Metoder med parametrar</h2>
+        <p>Metoder med parametrar används för att ta emot värden som kan användas inuti metoden. Här är ett exempel på en metod med parametrar:</p>
+        <pre>
+            <code>
+                public class Main {
+                    public static void sayHello(String name) {
+                        System.out.println("Hello, " + name + "!");
+                    }
+                    public static void main(String[] args) {
+                        sayHello("World");
+                    }
+                }
+            </code>
+        </pre>
+        <h2>Metoder med flera parametrar</h2>
+        <p>Metoder med flera parametrar används för att ta emot flera värden som kan användas inuti metoden. Här är ett exempel på en metod med flera parametrar:</p>
+        <pre>
+            <code>
+                public class Main {
+                    public static void add(int x, int y) {
+                        System.out.println("Summan är: " + (x + y));
+                    }
+                    public static void main(String[] args) {
+                        add(5, 3);
+                    }
+                }
+            </code>
+        </pre>
+        <h2>Roller och användningsområden för metoder</h2>
+        <p>Metoder används för att strukturera och organisera kod. Genom att dela upp en stor och komplex uppgift i mindre och enklare delar blir koden lättare att förstå och underhålla. Metoder kan också återanvändas i olika delar av programmet, vilket sparar tid och minskar risken för fel.</p>
+        <p>Det finns olika roller och användningsområden för metoder, såsom:</p>
+        <ul>
+            <li>Initiering: Metoder som används för att initiera variabler och objekt.</li>
+            <li>Beräkning: Metoder som används för att utföra beräkningar och matematiska operationer.</li>
+            <li>Utmatning: Metoder som används för att skriva ut resultat och information.</li>
+            <li>Validering: Metoder som används för att validera indata och kontrollera att de är korrekta.</li>
+            <li>Interaktion: Metoder som används för att interagera med användaren och ta emot indata.</li>
+        </ul>
+        <p>Genom att använda olika typer av metoder kan du skapa en välstrukturerad och effektiv kod som är lätt att förstå och underhålla.</p>
+</body>
+</html>

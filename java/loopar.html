@@ -1,0 +1,77 @@
+<!--
+    Här tänkte jag skriva om loopar i Java.
+    Och beskriva de olika typerna av loopar som finns i Java.
+    Och hur man hanterar nästlade loopar.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loopar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+    <h1>Loopar i Java</h1>
+    <p>En loop används för att upprepa en sekvens av instruktioner flera gånger. I Java finns det flera olika typer av loopar, såsom for-loopar, while-loopar och do-while-loopar. Här är några exempel på hur du kan använda loopar i Java:</p>
+    <h2>For-loopar</h2>
+    <p>En for-loop används för att upprepa en sekvens av instruktioner ett bestämt antal gånger. Här är ett exempel på hur du kan använda en for-loop:</p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    for (int i = 0; i < 5; i++) {
+                        System.out.println("Hello, World!");
+                    }
+                }
+            }
+        </code>
+    </pre>
+    <h2>While-loopar</h2>
+    <p>En while-loop används för att upprepa en sekvens av instruktioner så länge ett villkor är sant. Här är ett exempel på hur du kan använda en while-loop:</p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    int i = 0;
+                    while (i < 5) {
+                        System.out.println("Hello, World!");
+                        i++;
+                    }
+                }
+            }
+        </code>
+    </pre>
+    <h2>Do-while-loopar</h2>
+    <p>En do-while-loop används för att upprepa en sekvens av instruktioner minst en gång, och sedan så länge ett villkor är sant. Här är ett exempel på hur du kan använda en do-while-loop:</p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    int i = 0;
+                    do {
+                        System.out.println("Hello, World!");
+                        i++;
+                    } while (i < 5);
+                }
+            }
+        </code>
+    </pre>
+    <h2>Nästlade loopar</h2>
+    <p>Du kan använda nästlade loopar för att upprepa en sekvens av instruktioner flera gånger, där varje loop innehåller en annan loop. Här är ett exempel på hur du kan använda nästlade loopar i Java:</p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    for (int i = 0; i < 5; i++) {
+                        for (int j = 0; j < 5; j++) {
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+        </code>
+    </pre>
+</body>
+</html>
