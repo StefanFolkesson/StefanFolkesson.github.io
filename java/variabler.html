@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variabeltyper i Java</title>
+</head>
+<body>
+    <h2>Vad är en variabel?</h2>
+    <p>
+        En variabel är en namngiven behållare för att lagra data i ett program. Den kan innehålla olika typer av data, såsom heltal, flyttal, textsträngar och mycket mer. Genom att använda variabler kan vi tilldela värden till dem och sedan använda dessa värden i vårt program.
+    </p>
+
+    <h2>Användning av nyckelordet var i en deklarering</h2>
+    <p>
+        I Java kan vi använda nyckelordet "var" för att deklarera variabler med infererad typ. Det innebär att vi inte behöver ange den exakta typen vid deklarationen, utan kompilatorn kommer att inferera typen baserat på värdet som tilldelas variabeln. Här är ett exempel:
+        <code>var myVariable = "Hello World";</code>
+        I detta exempel kommer variabeln "myVariable" att infereras som en String eftersom vi tilldelar den ett textsträngsvärde.
+    </p>
+ 
+    <h2>Primitiva datatyper</h2>
+    <ul>
+        <li><strong>byte:</strong> En 8-bitars heltalstyp.</li>
+        <li><strong>short:</strong> En 16-bitars heltalstyp.</li>
+        <li><strong>int:</strong> En 32-bitars heltalstyp.</li>
+        <li><strong>long:</strong> En 64-bitars heltalstyp.</li>
+        <li><strong>float:</strong> En 32-bitars flyttalstyp.</li>
+        <li><strong>double:</strong> En 64-bitars flyttalstyp.</li>
+        <li><strong>boolean:</strong> En boolesk typ som kan vara antingen true eller false.</li>
+        <li><strong>char:</strong> En 16-bitars tecken typ.</li>
+    </ul>
+
+    <h2>Referenstyper</h2>
+    <ul>
+        <li><strong>String:</strong> En klass för att representera textsträngar.</li>
+        <li><strong>Array:</strong> En samling av element av samma typ.</li>
+        <li><strong>Class:</strong> En klass som representerar en typ.</li>
+        <li><strong>Interface:</strong> Ett kontrakt som en klass kan implementera.</li>
+    </ul>
+</body>
+</html>
+<h2>Exempel på variabeldeklaration och användning</h2>
+<h3>Primitiva datatyper</h3>
+<p>
+    <strong>byte:</strong> En 8-bitars heltalstyp. Exempel:
+    <code>byte myByte = 10;</code>
+</p>
+<p>
+    <strong>short:</strong> En 16-bitars heltalstyp. Exempel:
+    <code>short myShort = 1000;</code>
+</p>
+<p>
+    <strong>int:</strong> En 32-bitars heltalstyp. Exempel:
+    <code>int myInt = 100000;</code>
+</p>
+<p>
+    <strong>long:</strong> En 64-bitars heltalstyp. Exempel:
+    <code>long myLong = 1000000000L;</code>
+</p>
+<p>
+    <strong>float:</strong> En 32-bitars flyttalstyp. Exempel:
+    <code>float myFloat = 3.14f;</code>
+</p>
+<p>
+    <strong>double:</strong> En 64-bitars flyttalstyp. Exempel:
+    <code>double myDouble = 3.14159;</code>
+</p>
+<p>
+    <strong>boolean:</strong> En boolesk typ som kan vara antingen true eller false. Exempel:
+    <code>boolean myBoolean = true;</code>
+</p>
+<p>
+    <strong>char:</strong> En 16-bitars tecken typ. Exempel:
+    <code>char myChar = 'A';</code>
+</p>
+
+<h3>Referenstyper</h3>
+<p>
+    <strong>String:</strong> En klass för att representera textsträngar. Exempel:
+    <code>String myString = new String("Hello World");</code>
+</p>
+<p>
+    <strong>Array:</strong> En samling av element av samma typ. Exempel:
+    <code>int[] myArray = new int[5];</code>
+</p>
+<p>
+    <strong>Class:</strong> En klass som representerar en typ. Exempel:
+    <code>MyClass myObject = new MyClass();</code>
+</p>
+<p>
+    <strong>Interface:</strong> Ett kontrakt som en klass kan implementera. Exempel:
+    <code>MyInterface myInterface = new MyImplementation();</code>
+</p>
+
+<h2>Exempel på variabelomvandling</h2>
+<p>
+    <strong>Implicit omvandling:</strong> När en mindre datatyp konverteras till en större datatyp. Exempel:
+    <code>int myInt = 10;</code>
+    <code>double myDouble = myInt;</code>
+</p>
+<p>
+    <strong>Explicit omvandling:</strong> När en större datatyp konverteras till en mindre datatyp. Exempel:
+    <code>double myDouble = 3.14;</code>
+    <code>int myInt = (int) myDouble;</code>
+</p>
+</body>
+</html>
+<!-- Path: StefanFolkesson.github.io/java/villkor.html -->

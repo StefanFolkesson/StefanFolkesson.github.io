@@ -1,0 +1,98 @@
+<!--
+    HÄr tänkte jag besriva hur man hanterar villkor i Java.
+    Både if-satser och switch-satser.
+    men även i samband med loopar.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Villkor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+
+    <h1>Villkor i Java</h1>
+    <p>
+        Villkor är en viktig del av programmering, eftersom det gör det möjligt att styra programflödet beroende på olika förhållanden. I Java finns det flera olika sätt att hantera villkor, såsom if-satser, switch-satser och loopar.
+    </p>
+
+    <h2>If-satser</h2>
+    <p>
+        I Java kan du använda if-satser för att utföra olika handlingar beroende på om ett villkor är sant eller falskt. Här är ett exempel på hur du kan använda en if-sats:
+    </p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    int number = 10;
+
+                    if (number > 0) {
+                        System.out.println("Talet är positivt");
+                    } else {
+                        System.out.println("Talet är negativt");
+                    }
+                }
+            }
+        </code>
+    </pre>
+
+    <h2>Switch-satser</h2>
+    <p>
+        I Java kan du använda switch-satser för att utföra olika handlingar beroende på värdet av en variabel. Här är ett exempel på hur du kan använda en switch-sats:
+    </p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    int day = 3;
+
+                    switch (day) {
+                        case 1:
+                            System.out.println("Måndag");
+                            break;
+                        case 2:
+                            System.out.println("Tisdag");
+                            break;
+                        case 3:
+                            System.out.println("Onsdag");
+                            break;
+                        case 4:
+                            System.out.println("Torsdag");
+                            break;
+                        case 5:
+                            System.out.println("Fredag");
+                            break;
+                        case 6:
+                            System.out.println("Lördag");
+                            break;
+                        case 7:
+                            System.out.println("Söndag");
+                            break;
+                        default:
+                            System.out.println("Ogiltigt dagnummer");
+                            break;
+                    }
+                }
+            }
+        </code>
+    </pre>
+    <h2>Loopar</h2>
+    <p> I Java kan du använda Loopar för att upprepa en viss kod flera gånger. Där använder du villkor för att styra hur många gånger koden ska upprepas. Här är ett exempel på hur du kan använda en for-loop för att skriva ut alla tal från 1 till 10:</p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    for (int i = 1; i <= 10; i++) {
+                        System.out.println(i);
+                    }
+                }
+            }
+        </code>
+
+    </pre>  
+    
+    
+</body>
+</html>

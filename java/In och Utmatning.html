@@ -1,0 +1,71 @@
+<!--
+    Här är det tänkt att jag skall skriva om in och utmatning i Java.
+    Jag kommer även ta med problematiken med jämföring av strägar.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>In och utmatning</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+    <h1>In- och utmatning i Java</h1>
+    <p>
+        In- och utmatning är en viktig del av programmering, eftersom det gör det möjligt för användaren att interagera med programmet och för programmet att kommunicera med användaren. I Java finns det flera olika sätt att läsa in data från användaren och skriva ut data till användaren.
+    </p>
+
+    <h2>Scanner-klassen för inmatning</h2>
+    <p>
+        I Java kan du använda klassen <code>Scanner</code> för att läsa in data från användaren. Här är ett exempel på hur du kan använda <code>Scanner</code> för att läsa in ett heltal från användaren:
+    </p>
+    <pre>
+        <code>
+            import java.util.Scanner;
+
+            public class Main {
+                public static void main(String[] args) {
+                    Scanner scanner = new Scanner(System.in);
+
+                    System.out.print("Skriv in ett heltal: ");
+                    int number = scanner.nextInt();
+
+                    System.out.println("Du skrev in: " + number);
+
+                    scanner.close();
+                }
+            }
+        </code>
+    </pre>
+
+    <h2>Problematiken med jämförelse av strängar</h2>
+    <p>
+        När du jämför strängar i Java är det viktigt att komma ihåg att strängar är objekt och att jämförelseoperatorn <code>==</code> jämför referenser, inte innehållet i strängarna. För att jämföra innehållet i strängar i Java måste du använda metoden <code>equals()</code>. Här är ett exempel på hur du kan jämföra strängar i Java:
+    </p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    String str1 = "Hello";
+                    String str2 = "Hello";
+
+                    if (str1 == str2) {
+                        System.out.println("Strängarna är lika");
+                    } else {
+                        System.out.println("Strängarna är olika");
+                    }
+
+                    if (str1.equals(str2)) {
+                        System.out.println("Strängarna är lika");
+                    } else {
+                        System.out.println("Strängarna är olika");
+                    }
+                }
+            }
+        </code>
+    </pre>
+    
+
+</body>
+</html>

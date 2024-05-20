@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java Swing Grundläggande exempel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+    <h1>Java Swing to create a graph</h1>
+
+    <h2>Creating the base</h2>
+    <p>
+        Lets set the parameters for the graph and create the base for the graph.
+        We want a height of the graph ( start value and end value) and potential steps. 
+        And the width of the graph (start value and end value) and potential steps.
+        lets call the class Graph.
+    </p>
+    <pre>
+        <code>
+import javax.swing.JFrame;
+import java.awt.*;
+
+public class Graph extends JFrame {
+    private int graphStart;
+    private int graphEnd;
+    private int heightStart;
+    private int heightEnd;
+    private int heightStep;
+    private int widthStart;
+    private int widthEnd;
+    private int widthStep;
+    
+    public Graph(int heightStart, int heightEnd, int heightStep, int widthStart, int widthEnd, int widthStep) {
+        this.heightStart = heightStart;
+        this.heightEnd = heightEnd;
+        this.heightStep = heightStep;
+        this.widthStart = widthStart;
+        this.widthEnd = widthEnd;
+        this.widthStep = widthStep;
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(300, 200);
+        setLocation(100, 100);
+        setResizable(false);
+        setVisible(true);
+    }
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        // Draw the base of the graph
+        g.setColor(Color.BLACK);
+        g.drawLine(50, 50, 50, 150);
+        g.drawLine(50, 150, 250, 150);
+    }
+    public static void main(String[] args) {
+        new Graph(0, 100, 10, 0, 100, 10);
+    }
+}
+        </code> 
+    </pre>
+    <p></p>
+</body>
+</html>
