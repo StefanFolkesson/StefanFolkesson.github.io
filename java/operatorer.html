@@ -1,0 +1,169 @@
+<!--
+    Här är tanken att jag skall skriva om operatorer i Java.
+    Jag kommer att ta upp de vanligaste operatorerna och hur de används.
+    Aritmetiska operatorer, jämförelseoperatorer, logiska operatorer och tilldelningsoperatorer.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operatorer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+
+    <h1>Operatorer i Java</h1>
+    <p>
+        Operatorer används för att utföra olika operationer på variabler och värden i Java. Det finns flera olika typer av operatorer i Java, såsom aritmetiska operatorer, jämförelseoperatorer, logiska operatorer och tilldelningsoperatorer.
+    </p>
+
+    <h2>Tilldelningsoperatorer</h2>
+    <p>
+        Tilldelningsoperatorer används för att tilldela ett värde till en variabel. Här är några exempel på tilldelningsoperatorer:
+    </p>
+    <ul>
+        <li><strong>=</strong> - Tilldelning</li>
+        <li><strong>+=</strong> - Addition och tilldelning</li>
+        <li><strong>-=</strong> - Subtraktion och tilldelning</li>
+        <li><strong>*=</strong> - Multiplikation och tilldelning</li>
+        <li><strong>/=</strong> - Division och tilldelning</li>
+        <li><strong>%=</strong> - Modulus och tilldelning</li>
+    </ul>
+    <p>
+        Här är ett exempel på hur du kan använda tilldelningsoperatorer i Java:
+    </p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    int x = 10;
+                    int y = 5;
+
+                    x += y;
+                    System.out.println("x += y: " + x);
+
+                    x -= y;
+                    System.out.println("x -= y: " + x);
+
+                    x *= y;
+                    System.out.println("x *= y: " + x);
+
+                    x /= y;
+                    System.out.println("x /= y: " + x);
+
+                    x %= y;
+                    System.out.println("x %= y: " + x);
+                }
+            }
+        </code>
+    </pre>
+
+    <h2>Uppräkningsoperatorer</h2>
+    <p>
+        Uppräkningsoperatorer används för att öka eller minska värdet på en variabel med ett visst antal. Här är några exempel på uppräkningsoperatorer:
+    </p>
+    <ul>
+        <li><strong>++</strong> - Öka värdet på en variabel med 1</li>
+        <li><strong>--</strong> - Minska värdet på en variabel med 1</li>
+    </ul>
+    <p>
+        Här är ett exempel på hur du kan använda uppräkningsoperatorer i Java:
+    </p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    int x = 10;
+
+                    x++;
+                    System.out.println("x++: " + x);
+
+                    x--;
+                    System.out.println("x--: " + x);
+                }
+            }
+        </code>
+    </pre>
+    
+
+    <h2>Aritmetiska operatorer</h2>
+    <p>
+        Aritmetiska operatorer används för att utföra matematiska beräkningar på numeriska värden. Här är några exempel på aritmetiska operatorer:
+    </p>
+    <ul>
+        <li><strong>+</strong> - Addition</li>
+        <li><strong>-</strong> - Subtraktion</li>
+        <li><strong>*</strong> - Multiplikation</li>
+        <li><strong>/</strong> - Division</li>
+        <li><strong>%</strong> - Modulus (resten av en division)</li>
+    </ul>
+    <p>
+        Här är ett exempel på hur du kan använda aritmetiska operatorer i Java:
+    </p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    int x = 10;
+                    int y = 5;
+
+                    int sum = x + y;
+                    int difference = x - y;
+                    int product = x * y;
+                    int quotient = x / y;
+                    int remainder = x % y;
+
+                    System.out.println("Sum: " + sum);
+                    System.out.println("Difference: " + difference);
+                    System.out.println("Product: " + product);
+                    System.out.println("Quotient: " + quotient);
+                    System.out.println("Remainder: " + remainder);
+                }
+            }
+        </code>
+    </pre>
+
+    <h2>Jämförelseoperatorer</h2>
+    <p>
+        Jämförelseoperatorer används för att jämföra två värden och returnera ett booleskt värde (true eller false) beroende på om villkoret är sant eller falskt. Här är några exempel på jämförelseoperatorer:
+    </p>
+    <ul>
+        <li><strong>==</strong> - Likhet</li>
+        <li><strong>!=</strong> - Olikhet</li>
+        <li><strong>&gt;</strong> - Större än</li>
+        <li><strong>&lt;</strong> - Mindre än</li>
+        <li><strong>&gt;=</strong> - Större än eller lika med</li>
+        <li><strong>&lt;=</strong> - Mindre än eller lika med</li>
+    </ul>
+    <p>
+        Här är ett exempel på hur du kan använda jämförelseoperatorer i Java:
+    </p>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    int x = 10;
+                    int y = 5;
+
+                    boolean isEqual = x == y;
+                    boolean isNotEqual = x != y;
+                    boolean isGreater = x > y;
+                    boolean isLess = x < y;
+                    boolean isGreaterOrEqual = x >= y;
+                    boolean isLessOrEqual = x <= y;
+
+                    System.out.println("Is equal: " + isEqual);
+                    System.out.println("Is not equal: " + isNotEqual);
+                    System.out.println("Is greater: " + isGreater);
+                    System.out.println("Is less: " + isLess);
+                    System.out.println("Is greater or equal: " + isGreaterOrEqual);
+                    System.out.println("Is less or equal: " + isLessOrEqual);
+                }
+            }
+        </code>
+    </pre>
+
+</body>
+</html>
+
