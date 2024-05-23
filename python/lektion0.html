@@ -1,0 +1,91 @@
+<!--
+    Här tänker jag beskriva olika nivåer av språk och vad de kallas. 
+    Såsom lågnivåspråk, högnivåspråk, assembler, maskinkod.
+    Jag kommer beskriva ord såsom kompilator och interpretator.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>L0: Olika Språk</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+    <h1>L0: Olika Språk</h1>
+    <p>Det finns flera olika nivåer av programmeringsspråk, såsom lågnivåspråk och högnivåspråk. Lågnivåspråk är språk som är nära maskinens nivå och är svåra att läsa och skriva. Exempel på lågnivåspråk är assembler och maskinkod. Högnivåspråk är språk som är lättare att läsa och skriva och är mer abstrakta än lågnivåspråk. Exempel på högnivåspråk är Python, Java och C++.</p>
+    <h2>Lågnivåspråk: Assembler och Maskinkod</h2>
+    <p>Assembler är ett språk som används för att skriva program som kan köras direkt på en dator. Maskinkod är ett språk som består av binära instruktioner som kan köras direkt av en processor.</p>
+    <h3>Hello world i maskinkod:</h3>
+    <pre>
+        <code>
+            48 65 6C 6C 6F 20 77 6F 72 6C 64 0A
+        </code>
+    </pre>
+    <p>Maskinkod är svårt att läsa och skriva eftersom det består av binära instruktioner som är svåra att förstå. Assembler är ett språk som översätts till maskinkod och är lättare att läsa och skriva än maskinkod.</p>
+
+    <h3>Hello world i assembler:</h3>
+    <pre>
+        <code>
+            section .data
+            msg db 'Hello, world!', 0
+
+            section .text
+            global _start
+
+            _start:
+                mov eax, 4
+                mov ebx, 1
+                mov ecx, msg
+                mov edx, 13
+                int 0x80
+
+                mov eax, 1
+                xor ebx, ebx
+                int 0x80
+        </code>
+    </pre>
+    <p>Assembler är ett lågnivåspråk som är lättare att läsa och skriva än maskinkod. Det används för att skriva program som kan köras direkt på en dator.</p> 
+    <h2>Högnivåspråk</h2>
+    <p>Högnivåspråk är språk som är lättare att läsa och skriva och är mer abstrakta än lågnivåspråk. Exempel på högnivåspråk är Python, Java och C++. Högnivåspråk är mer abstrakta än lågnivåspråk och används för att skriva program som är mer lättlästa och underhållbara.</p>
+    <h3>Hello world i Python:</h3>
+    <pre>
+        <code>
+            print("Hello, world!")
+        </code>
+    </pre>
+    <p>Python är ett högnivåspråk som är enkelt att lära sig och använda. Det är ett populärt språk inom datavetenskap och används för att skapa webbapplikationer, spel, artificiell intelligens och mycket mer.</p>
+    <h3>Hello world i Java:</h3>
+    <pre>
+        <code>
+            public class Main {
+                public static void main(String[] args) {
+                    System.out.println("Hello, world!");
+                }
+            }
+        </code>
+    </pre>
+    <p>Java är ett högnivåspråk som är populärt inom företagsutveckling och används för att skapa stora och komplexa system. Java är ett objektorienterat språk som är enkelt att lära sig och använda.</p>
+    <h3>Hello world i C++:</h3>
+    <pre>
+        <code>
+            #include <iostream>
+
+            int main() {
+                std::cout << "Hello, world!" << std::endl;
+                return 0;
+            }
+        </code>
+    </pre>
+    <p>C++ är ett högnivåspråk som är kraftfullt och flexibelt. Det är ett objektorienterat språk som används för att skapa snabba och effektiva program. C++ är ett populärt språk inom spelutveckling och systemprogrammering.</p>
+
+
+    <h2>Kompilator och Interpretator</h2>
+    <p>En kompilator är ett program som översätter källkod till maskinkod. En kompilator tar en hel fil med källkod och översätter den till maskinkod som kan köras direkt av en processor. Ex  gcc hello.c -o hello.exe</p>
+    <p>En interpretator är ett program som tolkar och kör källkod rad för rad. En interpretator tar en rad med källkod och tolkar den till maskinkod som kan köras direkt av en processor. Ex python hello.py</p>
+    <p>Exempel på språk som används med kompilator är C, C++, Kotlin</p>
+    <p>Exempel på språk som används med interpretator är Python, Ruby, Perl, PHP, JavaScript, Lua</p> 
+    <p>Det finns även språk som kan användas med både kompilator och interpretator, såsom Java och C#.</p>
+    
+</body>
+</html>
