@@ -36,9 +36,9 @@
             <span class="new">gissning = input("Gissa ett tal mellan 1 och 100: ")</span>
             
             <span class="new">if gissning == rätt_tal:</span>
-            <span class="new">print("Grattis! Du gissade rätt.")</span>
-                <span class="new">else:</span>
-                    <span class="new">print("Tyvärr, du gissade fel.")</span>
+                <span class="new">print("Grattis! Du gissade rätt.")</span>
+            <span class="new">else:</span>
+                <span class="new">print("Tyvärr, du gissade fel.")</span>
         </code>
     </pre>
     <h2>Steg 3</h2>
@@ -74,14 +74,14 @@
                 gissning = input("Gissa ett tal mellan 1 och 100: ")
 
                 <span class="new">try:</span>
-                <span class="new">gissning = int(gissning)</span>
-                    <span class="new">except ValueError:</span>
-                        <span class="new">print("Du måste skriva in ett heltal.")</span>
-                            <span class="new">continue</span>
+                    <span class="new">gissning = int(gissning)</span>
+                <span class="new">except ValueError:</span>
+                    <span class="new">print("Du måste skriva in ett heltal.")</span>
+                    <span class="new">continue</span>
 
-                                <span class="new">if gissning < 1 or gissning > 100:</span>
-                                    <span class="new">print("Du måste gissa ett tal mellan 1 och 100.")</span>
-                                        <span class="new">continue</span>   
+                <span class="new">if gissning < 1 or gissning > 100:</span>
+                    <span class="new">print("Du måste gissa ett tal mellan 1 och 100.")</span>
+                    <span class="new">continue</span>   
 
                 försök += 1
 
@@ -93,42 +93,37 @@
     </pre>
     <h2>Steg 5</h2>
     <p>Nu skall vi ge respons om användaren gissade för högt eller för lågt.</p>
-    
-    <h2>Python kod</h2>
     <pre>
         <code>
             import random
 
-            def gissa_talet():
-                rätt_tal = random.randint(1, 100)
-                försök = 0
-                gissning = None
+            rätt_tal = random.randint(1, 100)
+            försök = 0
+            gissning = None
 
-                while gissning != rätt_tal:
-                    gissning = input("Gissa ett tal mellan 1 och 100: ")
+            while gissning != rätt_tal:
+                gissning = input("Gissa ett tal mellan 1 och 100: ")
 
-                    try:
-                        gissning = int(gissning)
-                    except ValueError:
-                        print("Du måste skriva in ett heltal.")
-                        continue
+                try:
+                    gissning = int(gissning)
+                except ValueError:
+                    print("Du måste skriva in ett heltal.")
+                    continue
 
-                    if gissning < 1 or gissning > 100:
-                        print("Du måste gissa ett tal mellan 1 och 100.")
-                        continue
+                if gissning < 1 or gissning > 100:
+                    print("Du måste gissa ett tal mellan 1 och 100.")
+                    continue
 
-                    försök += 1
+                försök += 1
 
-                    if gissning == rätt_tal:
-                        print(f"Grattis! Du gissade rätt på {försök} försök.")
-                    <span class="new">elif abs(gissning - rätt_tal) < 5:</span>
-                        <span class="new">print("Du gissade väldigt nära det rätta talet.")</span>
-                            <span class="new">elif gissning < rätt_tal:</span>
-                                <span class="new">print("Du gissade för lågt.")</span>
-                                    <span class="new">else:</span>
-                                        <span class="new">print("Du gissade för högt.")</span>
-
-            gissa_talet()
+                if gissning == rätt_tal:
+                    print(f"Grattis! Du gissade rätt på {försök} försök.")
+                <span class="new">elif abs(gissning - rätt_tal) < 5:</span>
+                    <span class="new">print("Du gissade väldigt nära det rätta talet.")</span>
+                <span class="new">elif gissning < rätt_tal:</span>
+                    <span class="new">print("Du gissade för lågt.")</span>
+                <span class="new">else:</span>
+                    <span class="new">print("Du gissade för högt.")</span>
         </code>
     </pre>
     <h2>Exempel på körning</h2>
