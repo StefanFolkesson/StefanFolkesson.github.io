@@ -245,6 +245,56 @@ if(spelare_liv<=0):
 if(fiende_liv<=0):    
     print("Fienden dog!")
 ```
+## Nytt rum
+Nu skall vi kanske försöka styra upp hela spelet med att vi kan gå från olika platser 
+När vi flytt från Balrogen, eller för den delen bekämpat honom. Så vill vi kanske gå vidare. 
+Om vi flyr skall vi automatiskt gått till nästa plats. Men om vi bekämpar honom måste vi få valet att gå til nästa plats. 
+Detta skulle vi kunna göra genom att helt enkelt ha en lista med alla platser som vi kan vara på. Den första platsen är bron och nästa plats är utanför berget. 
+sen sätter vi en stor loop runt om hela spelet (nästan)
+```javascript
+platser = ["På sista bron i moria","Utanför berget"]
+plats = 0
+while (plats<len(platser)):
+    print(platser[plats])
+    if(plats==0):
+        if((spelare_liv > 0) and (fiende_liv > 0)):
+            print("Den mäktiga striden i Morias grottor är påväg att starta.")
+            print(spelare + "står på bron och tittar ned på " + fiende + " i avgrunden")
+
+            while ((spelare_liv > 0) and (fiende_liv > 0)) :
+                svar = input("Vad vill du göra härnäst? (slå/fly) ")
+                spelare_vapen_skada = random.randint(spelare_vapen_skada_min,spelare_vapen_skada_max)
+                fiende_vapen_skada = random.randint(fiende_vapen_skada_min,fiende_vapen_skada_max)
+                if(svar=="slå"):
+                    # Du slår
+                    print(spelare + " slår med sin " +spelare_vapen +" och gör: "+ str(spelare_vapen_skada) +" skada")
+                    fiende_liv = fiende_liv - spelare_vapen_skada
+                    print(fiende + " har nu bara " + str(fiende_liv)+ " hälsopoäng kvar")
+                # Fiende slår
+                print(fiende + " slår med sin " +fiende_vapen +" och gör: "+ str(fiende_vapen_skada) +" skada")
+                spelare_liv = spelare_liv - fiende_vapen_skada
+                print(spelare + " har nu bara " + str(spelare_liv)+ " hälsopoäng kvar")
+                if(svar=="fly"):
+                    print("Du flyr!")
+                    plats=plats+1
+
+                    break    
+            if(spelare_liv<=0):    
+                print("Du dog!")
+            if(fiende_liv<=0):    
+                print("Fienden dog!")
+        else:
+            if(input("Du kan gå ut ur berget vill du det? (ja/nej)")=="ja"):
+                plats=plats+1
+    else:
+        print("Du lyckades ta dig ut.")
+        break
+```
+Lite nya saker här. 
+Vu har en lista med platser och första platsen i den listan är position 0. Så är det helt enkelt i programmeringsvärlden. 
+För att komma åt saker i listan använder man hakparenteser [] och där i skriver man platsens id så: platser[0] kommer ge oss svaret: "På sista bron i moria".
+Vi använder även en inbyggd funktion len() som helt enkelt mäter längden på listan. 
+Så len(platser) ger oss 2. 
 
 Ditt uppdrag är att skapa ett enkelt spel där man kan bestämma sitt namn och där jag kan slåss mit en motståndare. 
 Om jag överlever efter jag slagit så har jag vunnit. 
