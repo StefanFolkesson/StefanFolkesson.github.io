@@ -249,9 +249,93 @@ if(fiende_liv<=0):
 Nu skall vi kanske försöka styra upp hela spelet med att vi kan gå från olika platser 
 När vi flytt från Balrogen, eller för den delen bekämpat honom. Så vill vi kanske gå vidare. 
 Om vi flyr skall vi automatiskt gått till nästa plats. Men om vi bekämpar honom måste vi få valet att gå til nästa plats. 
+Så låt oss skapa nästa rum efter vi flytt. 
+```python
+.
+.
+.
+if(spelare_liv<=0):    
+    print("Du dog!")
+    exit()
+if(fiende_liv<=0):    
+    print("Fienden dog!")
+## Rum 2
+print("Utanför berget")
+print(spelare +" lyckades ta sig ut.")
+print(spelare + " ser en stig")
+val = input("Vad gör du? (stanna) kvar/(springa) nedför stigen: ")
+if(val=="stanna"):
+    print("Berget verkar explodera under dig och du brinner upp.")
+    exit()
+else:
+    print("När du springer ned för bergskanten ser du bakom dig hur hela berget börjar brinna")
+
+```
+Jag har lagt till en ny inbyggd funktion som helt enkelt avslutar programmet tvärt. Och det är exit(). Det gör att det är enklare att hantera rumsbyten. När du dör så stänger programmet ner helt enkelt. 
+
+## Plocka upp saker
+
+Natten faller på och du behöver leta efter en pinne och göra eld av.
+Så vi skulle vilja ha en inventory att ta hand om. För enkelthets skull så kan vi bara ha en sak i inventory åt gången.
+
+```python
+## Rum 3
+print(spelaren +" står vid foten till berget och bestämmer sig för att ta en paus")
+print("Framför dig ligger en pinne")
+val = input("Vad vill du göra? (Plocka upp pinne/Göra eld/Sova)")
+```
+Oj tre val. Med lite olika val i sig. 
+Om jag gör upp eld utan att plocka upp pinnen så går det inte och jag kommer tillbaka.
+Om jag Sover utan att ha gjort upp eld förfryser jag.
+Om jag plockar upp pinnen skall den försvinna från prompten.
+Om jag gör upp elt efter att jag plockat upp pinnen skall jag få en eld och prompten skall bara vara sova.
+Om jag sover efter jag plockat upp pinnen utan att göra eld förfryser jag. 
+så låt oss skapa tre variabler.
+och vi gör om val=... raden
+```python
+pinne=True
+eld=False
+sova=False
+while(sova==False):
+    prompt="("
+    if(pinne==True):
+        prompt=prompt+"Plocka upp pinne /"
+    if(eld==True):
+        prompt=prompt+"en brinnande eld/Sova):"
+    else:
+        prompt=prompt+"göra en eld/Sova):"
+    val=input(prompt)
+    if(val == "plocka"):
+        if(pinne==False): ## Jag har plockat upp pinnen
+            print("Du har redan plockat upp pinnen")
+        else:
+            print("Du plockar upp pinnen")
+            pinne=False
+    elif(val == "elda"):
+        if(eld==True):
+            print("Din eld brinner redan.")
+        else:
+            if(pinne==False):
+                print("Du tänder en eld!")
+                eld=True
+            else:
+                print("Du behöver en pinne till det")
+    elif(val=="sova"):
+        if(eld==False):
+            print("Du fryser ihjäl under natten")
+            exit()
+        if(eld==True):
+            print("Du sover gott och vaknar nästa morgon")
+            sova=True
+    else:
+        print("skriv plocka,elda eller sova")
+```    
+
+Old stuff
+------
 Detta skulle vi kunna göra genom att helt enkelt ha en lista med alla platser som vi kan vara på. Den första platsen är bron och nästa plats är utanför berget. 
 sen sätter vi en stor loop runt om hela spelet (nästan)
-```javascript
+```python
 platser = ["På sista bron i moria","Utanför berget"]
 plats = 0
 while (plats<len(platser)):
