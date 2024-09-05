@@ -448,6 +448,115 @@ if(rum==4):
 
 if(rum==5):
     print("Du kommer fram till en sjö")
+    
+```
+
+## Omtag
+Nu har vi kommit så långt i vår kod att vi har hittat lite nya tekniker som vi kanske skulle vilja använda över hela projektet. 
+Att hantera varje rum med en variabel (rum) verkar ju faktiskt ganska smart.
+Så om vi börjar med att definera det och hantera varje rum i en egen if-sats:
+```python
+rum = 1
+if(rum == 1):
+    print("Den mäktiga striden i Morias grottor är påväg att starta.")
+    print(spelare + "står på bron och tittar ned på " + fiende + " i avgrunden")
+
+    while ((spelare_liv > 0) and (fiende_liv > 0)) :
+        svar = input("Vad vill du göra härnäst? (slå/fly) ")
+        spelare_vapen_skada = random.randint(spelare_vapen_skada_min,spelare_vapen_skada_max)
+        fiende_vapen_skada = random.randint(fiende_vapen_skada_min,fiende_vapen_skada_max)
+        if(svar=="slå"):
+            # Du slår
+            print(spelare + " slår med sin " +spelare_vapen +" och gör: "+ str(spelare_vapen_skada) +" skada")
+            fiende_liv = fiende_liv - spelare_vapen_skada
+            print(fiende + " har nu bara " + str(fiende_liv)+ " hälsopoäng kvar")
+        # Fiende slår
+        print(fiende + " slår med sin " +fiende_vapen +" och gör: "+ str(fiende_vapen_skada) +" skada")
+        spelare_liv = spelare_liv - fiende_vapen_skada
+        print(spelare + " har nu bara " + str(spelare_liv)+ " hälsopoäng kvar")
+        if(svar=="fly"):
+            print("Du flyr!")
+            rum = 2
+            break    
+    if(spelare_liv<=0):    
+        rum = "död"
+    if(fiende_liv<=0):    
+        print("Fienden dog!")
+        rum = 2
+if(rum == 2):
+    ## Rum 2
+    print("Utanför berget")
+    print(spelare +" lyckades ta sig ut.")
+    print(spelare + " ser en stig")
+    while(val not in ["stanna","springa"]):
+        val = input("Vad gör du? (stanna) kvar/(springa) nedför stigen: ")
+        if(val=="stanna"):
+            print("Berget verkar explodera under dig och du brinner upp.")
+            rum = "död"
+        elif(val == "springa"):
+            print("När du springer ned för bergskanten ser du bakom dig hur hela berget börjar brinna")
+            rum = 3
+if(rum == 3):
+    ## Rum 3
+    print(spelaren +" står vid foten till berget och bestämmer sig för att ta en paus")
+    print("Framför dig ligger en pinne")
+    pinne=True
+    eld=False
+    sova=False
+    while(sova==False):
+        prompt="("
+        if(pinne==True):
+            prompt=prompt+"Plocka upp pinne /"
+        if(eld==True):
+            prompt=prompt+"en brinnande eld/ Sova):"
+        else:
+            prompt=prompt+"göra en eld/ Sova):"
+        val=input(prompt)
+        if(val == "plocka"):
+            if(pinne==False): ## Jag har plockat upp pinnen
+                print("Du har redan plockat upp pinnen")
+            else:
+                print("Du plockar upp pinnen")
+                pinne=False
+        elif(val == "elda"):
+            if(eld==True):
+                print("Din eld brinner redan.")
+            else:
+                if(pinne==False):
+                    print("Du tänder en eld!")
+                    eld=True
+                else:
+                    print("Du behöver en pinne till det")
+        elif(val=="sova"):
+            if(eld==False):
+                print("Du fryser ihjäl under natten")
+                rum = "död"
+                break;
+            if(eld==True):
+                print("Du sover gott och vaknar nästa morgon")
+                sova=True
+        else:
+            print("skriv plocka,elda eller sova")
+    if(rum=="död")
+        break
+    while (val not in ["höger","vänster"]):
+        val = input("Vägen delar sig i två delar (höger/vänster) vilken tar du?")
+        if(val=="höger"):
+            ## Rum 4
+            rum = 4
+        elif(val=="vänster"):
+            ## Rum 5
+            rum = 5
+        else:
+            print("Skriv 'höger' eller 'vänster'")
+if(rum == 4):
+    print("Du kommer fram till en stuga")
+if(rum == 5):
+    print("Du kommer fram till en sjö")
+
+if(rum="död"):
+    print("Du dog!")
+
 ```
 
 Old stuff
