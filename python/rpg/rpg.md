@@ -330,6 +330,125 @@ while(sova==False):
     else:
         print("skriv plocka,elda eller sova")
 ```    
+Sammanfattning
+---
+```python
+import random
+
+spelare = "Gandalf"
+spelare_liv = 100
+spelare_vapen="Stav"
+spelare_vapen_skada=10
+fiende = "Balrog"
+fiende_liv = 100
+fiende_vapen="Piska"
+fiende_vapen_skada=30
+spelare_vapen_skada_min=10
+spelare_vapen_skada_max=20
+fiende_vapen_skada_min=1
+fiende_vapen_skada_max=30
+
+print("Den mäktiga striden i Morias grottor är påväg att starta.")
+print(spelare + "står på bron och tittar ned på " + fiende + " i avgrunden")
+
+while ((spelare_liv > 0) and (fiende_liv > 0)) :
+    svar = input("Vad vill du göra härnäst? (slå/fly) ")
+    spelare_vapen_skada = random.randint(spelare_vapen_skada_min,spelare_vapen_skada_max)
+    fiende_vapen_skada = random.randint(fiende_vapen_skada_min,fiende_vapen_skada_max)
+    if(svar=="slå"):
+        # Du slår
+        print(spelare + " slår med sin " +spelare_vapen +" och gör: "+ str(spelare_vapen_skada) +" skada")
+        fiende_liv = fiende_liv - spelare_vapen_skada
+        print(fiende + " har nu bara " + str(fiende_liv)+ " hälsopoäng kvar")
+    # Fiende slår
+    print(fiende + " slår med sin " +fiende_vapen +" och gör: "+ str(fiende_vapen_skada) +" skada")
+    spelare_liv = spelare_liv - fiende_vapen_skada
+    print(spelare + " har nu bara " + str(spelare_liv)+ " hälsopoäng kvar")
+    if(svar=="fly"):
+        print("Du flyr!")
+        break    
+if(spelare_liv<=0):    
+    print("Du dog!")
+if(fiende_liv<=0):    
+    print("Fienden dog!")
+## Rum 2
+print("Utanför berget")
+print(spelare +" lyckades ta sig ut.")
+print(spelare + " ser en stig")
+val = input("Vad gör du? (stanna) kvar/(springa) nedför stigen: ")
+if(val=="stanna"):
+    print("Berget verkar explodera under dig och du brinner upp.")
+    exit()
+else:
+    print("När du springer ned för bergskanten ser du bakom dig hur hela berget börjar brinna")
+## Rum 3
+print(spelaren +" står vid foten till berget och bestämmer sig för att ta en paus")
+print("Framför dig ligger en pinne")
+pinne=True
+eld=False
+sova=False
+while(sova==False):
+    prompt="("
+    if(pinne==True):
+        prompt=prompt+"Plocka upp pinne /"
+    if(eld==True):
+        prompt=prompt+"en brinnande eld/ Sova):"
+    else:
+        prompt=prompt+"göra en eld/ Sova):"
+    val=input(prompt)
+    if(val == "plocka"):
+        if(pinne==False): ## Jag har plockat upp pinnen
+            print("Du har redan plockat upp pinnen")
+        else:
+            print("Du plockar upp pinnen")
+            pinne=False
+    elif(val == "elda"):
+        if(eld==True):
+            print("Din eld brinner redan.")
+        else:
+            if(pinne==False):
+                print("Du tänder en eld!")
+                eld=True
+            else:
+                print("Du behöver en pinne till det")
+    elif(val=="sova"):
+        if(eld==False):
+            print("Du fryser ihjäl under natten")
+            exit()
+        if(eld==True):
+            print("Du sover gott och vaknar nästa morgon")
+            sova=True
+    else:
+        print("skriv plocka,elda eller sova")
+```
+I ett val kan vi välja två olika saker. I detta fall höger eller vänster och varje val ger oss möjligheten att komma till ett nytt rum. 
+För att hantera detta på ett enkelt sätt tar jag in några nya saker. 
+Först och främst så låter har whileloopen hålla på tills val innehåller antingen höger eller vänster. 
+Jag skapar en lista (en variabel som innehåller flera värden) som innehåller alla korrekta värden som du kan skriva in om du skriver något annat så kommer det som står i else: skrivas ut. 
+val not in []  -> val inte finns i listan [] och val är det jag skrivit in. 
+Sen skapar jag även en variabel rum. Jag sätter den på 3 för det är ju där vi är just nu. Om du skriver vänster så blir variabl rum 4 eller höger så blir den 5. Sen kollar jag efteråt vilken siffra rummet har så kan jag fortsätta där. Så i princip skulle jag kunna hantera rum i fortsättningen. När du gör något för att byta rum så sätter jag rumsvariabeln till det rum jag vill hoppa till (hellst hödre än det som är just nu annars blir det lite jobbigt) och sedan gör jag en break dvs avbryter den if-sats jag är i just nu för att till sist söka reda på nästa rum.
+
+```python
+rum = 3
+while (val not in ["höger","vänster"]):
+    val = input("Vägen delar sig i två delar (höger/vänster) vilken tar du?")
+    if(val=="höger"):
+        ## Rum 4
+        rum = 4
+    elif(val=="vänster"):
+        ## Rum 5
+        rum = 5
+    else:
+        print("Skriv 'höger' eller 'vänster'")
+    
+
+if(rum==4):
+    print("Du kommer fram till en stuga")
+
+
+if(rum==5):
+    print("Du kommer fram till en sjö")
+```
 
 Old stuff
 ------
