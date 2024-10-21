@@ -245,3 +245,5 @@ I nästa lektion kommer vi att:
 - Experimentera med olika AI-mönster för fiender och lägg till fler animationer för karaktären och fienderna.
 
 Vi börjar närma oss ett spel med full funktionalitet, och snart kan vi fokusera på att förfina och utöka spelet ytterligare med fler funktioner och detaljer!
+
+[Dag 7](unity7.md)

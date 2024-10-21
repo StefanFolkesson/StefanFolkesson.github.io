@@ -149,3 +149,5 @@ I nästa lektion ska vi:
 - Experimentera med att ändra designen på UI-elementen (textstorlek, färger, placering) för att förbättra spelupplevelsen.
 
 Vi bygger vidare på detta steg för steg, så se till att du känner dig bekväm med grunderna innan vi går vidare. Lycka till!
+
+[Dag 3](unity3.md)

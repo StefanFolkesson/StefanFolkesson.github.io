@@ -254,3 +254,5 @@ I nästa lektion kommer vi att:
 - Förbättra drag-och-släpp-funktionaliteten genom att anpassa slots och inventarielayout.
 
 Vi fortsätter att bygga upp spelet med fler funktioner och interaktionsmöjligheter, vilket gör det både mer komplext och intressant!
+
+[Dag 5](unity5.md)

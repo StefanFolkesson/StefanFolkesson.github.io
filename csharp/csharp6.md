@@ -241,4 +241,5 @@ För att praktisera dagens teori, rekommenderas följande övningar:
 5. **Observer-mönster:**
    - Implementera ett observer-mönster där flera "lyssnare" (observers) får veta när ett värde ändras i ett subjekt. Demonstrera detta med ett exempel där observatörerna reagerar på en förändring av
    
+[Dag 7](csharp7.md)
 

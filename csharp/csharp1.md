@@ -72,3 +72,5 @@ Visual Studio erbjuder ett av de mest omfattande debugger-verktygen för C#-utve
 - **Locals och Watch**: Med "Locals"-fönstret kan du se värdena på dina variabler under körningen, medan du med "Watch" kan övervaka specifika uttryck eller variabler.
 
 Efter denna introduktionsdag kommer du ha en grundläggande förståelse för vad C# är, dess förhållande till .NET, och hur du kan sätta upp en utvecklingsmiljö för att börja koda.
+
+[Dag 2](csharp2.md)

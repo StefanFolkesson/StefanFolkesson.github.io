@@ -170,3 +170,5 @@ För att praktisera dagens teori, rekommenderas att du implementerar små progra
 ---
 
 Efter denna dag kommer du att ha en stabil förståelse för hur du kan deklarera variabler, använda operatorer och kontrollstrukturer samt repetera kod med loopar i C#. Detta ger dig grunden för att kunna bygga mer komplexa program i de kommande dagarna!
+
+[Dag 3](csharp3.md)

@@ -185,3 +185,4 @@ Mata in ett annat tal:");
 
 Efter Dag 4 kommer du ha en djup förståelse för hur undantag fungerar i C#, och du kommer att kunna skriva robust kod som kan hantera fel och undantag på ett kontrollerat sätt. Detta är en avgörande färdighet för att skapa applikationer som inte kraschar vid oväntade problem och som kan ge användaren informativa och användbara felmeddelanden.
 
+[Dag 5](csharp5.md)

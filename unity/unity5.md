@@ -242,3 +242,5 @@ I nästa lektion kommer vi att:
 - Förbättra spelets UI och visuell feedback för att göra spelet mer engagerande och responsivt.
 
 Vi är på god väg att skapa ett komplett spel med interaktiva objekt, fiender och ett funktionellt inventariesystem!
+
+[Dag 6](unity6.md)

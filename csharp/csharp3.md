@@ -185,3 +185,5 @@ För att omsätta dessa teorier i praktiken kan du göra följande övningar:
 ---
 
 Efter Dag 3 kommer du ha en djup förståelse för objektorienterad programmering i C#, inklusive hur du skapar och använder klasser och objekt, samt hur du implementerar arv, inkapsling och polymorfism. Detta kommer ge dig en kraftfull grund för att skriva välstrukturerade och skalbara program i C#.
+
+[Dag 4](csharp4.md)

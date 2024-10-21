@@ -330,3 +330,5 @@ I nästa lektion kommer vi att:
 - Fortsätt arbeta med spelets progression och testa olika poängsystem.
 
 Vi bygger nu upp ett spel med fler interaktiva element och ett mer engagerande spelupplägg!
+
+[Dag 8](unity8.md)

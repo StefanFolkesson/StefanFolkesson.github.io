@@ -179,3 +179,4 @@ Efter Dag 5 kommer du att ha en stark förståelse för hur LINQ och lambda-uttr
 
  frågor för att manipulera data, vilket är en ovärderlig färdighet när du arbetar med stora eller komplexa datastrukturer.
  
+[Dag 6](csharp6.md)

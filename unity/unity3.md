@@ -188,3 +188,5 @@ I nästa lektion kommer vi att:
 - Experimentera med olika ikoner och inventarielayouter för att skapa ett mer attraktivt användargränssnitt.
 
 Vi är snart klara med ett fullt fungerande system för insamling och interaktion, och vi kan sedan fortsätta med mer avancerade funktioner i spelet!
+
+[Dag 4](unity4.md)

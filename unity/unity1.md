@@ -133,3 +133,5 @@ Under nästa lektion kommer vi att:
 - Justera karaktärens hastighet i **Inspector** för att känna hur spelet reagerar.
 
 Lektionerna kommer stegvis att bygga upp spelet. Fortsätt träna på det vi gått igenom, så är du redo för nästa steg!
+
+[Dag 2](unity2.md)
