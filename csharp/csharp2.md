@@ -1,5 +1,3 @@
-Självklart! Här kommer en djupare förklaring av de teoretiska delarna för Dag 2.
-
 ### Dag 2: Grunder i C#-syntax
 
 Under dag 2 fokuserar vi på att lära oss grunderna i C#-syntax och hur det skiljer sig från andra språk som Java och JavaScript. Målet är att förstå hur C# hanterar variabler, datatyper och kontrollstrukturer. Låt oss bryta ner dessa områden.

@@ -1,5 +1,3 @@
-Här kommer en djupare förklaring av de teoretiska delarna för Dag 6, där vi fokuserar på mer avancerade objektorienterade koncept och designmönster i C#. Denna dag kommer ge dig insikt i hur du kan strukturera din kod bättre genom att använda abstraktion, interfaces och designmönster som gör dina applikationer mer skalbara och underhållbara.
-
 ### Dag 6: Avancerad OOP och designmönster
 
 Nu när du har en grundläggande förståelse för objektorienterad programmering (OOP) i C#, är det dags att fördjupa sig i avancerade koncept som gränssnitt (interfaces), abstrakta klasser och vanliga designmönster. Dessa koncept hjälper dig att skapa mer modulära och lättunderhållna applikationer.

@@ -1,5 +1,3 @@
-Här kommer en djupare förklaring av de teoretiska delarna för Dag 4, där vi fokuserar på felhantering och undantag (exceptions) i C#. Felhantering är en viktig del av att bygga robusta applikationer som kan hantera oförutsedda problem utan att krascha.
-
 ### Dag 4: Felhantering och undantag i C#
 
 Felhantering i C# hanteras främst genom användningen av undantag (exceptions). Undantag är händelser som inträffar under programkörning och som bryter det normala exekveringsflödet. Genom att fånga och hantera undantag på rätt sätt kan du undvika att applikationen kraschar och istället hantera problemet på ett kontrollerat sätt.

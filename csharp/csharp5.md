@@ -1,5 +1,3 @@
-Här kommer en djupare förklaring av de teoretiska delarna för Dag 5, där vi fokuserar på **LINQ** (Language Integrated Query) och **lambda-uttryck** i C#. Dessa är kraftfulla verktyg för att hantera och manipulera data på ett effektivt och läsbart sätt.
-
 ### Dag 5: LINQ och lambda-uttryck
 
 C# erbjuder LINQ (Language Integrated Query) som ett integrerat verktyg för att utföra datafrågor direkt i språket. Tillsammans med lambda-uttryck kan du använda LINQ för att skriva kort och kraftfull kod som bearbetar samlingar (som listor, arrayer, etc.) på ett deklarativt sätt.

@@ -1,5 +1,3 @@
-Här kommer en djupare förklaring av de teoretiska delarna för Dag 3, där vi fokuserar på objektorienterad programmering (OOP) i C#. OOP är ett centralt koncept i C# och många andra moderna programmeringsspråk, och förståelse för dessa principer är avgörande för att skriva effektiv och återanvändbar kod.
-
 ### Dag 3: Objektorienterad programmering i C#
 
 Objektorienterad programmering (OOP) är ett programmeringsparadigm där program är strukturerade runt objekt och klasser snarare än procedurer och funktioner. OOP gör det lättare att strukturera och underhålla stora kodbaser genom att bryta ner program i självständiga komponenter som representerar olika verkliga eller abstrakta entiteter.

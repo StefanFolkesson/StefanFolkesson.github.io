@@ -1,4 +1,5 @@
-Absolut! Här kommer en djupare förklaring av de teoretiska delarna för Dag 1.
+### Dag 1: Introduktion till C# och .NET
+Få en förståelse för C# som språk och dess ekosystem.
 
 ### 1. **Vad är C#? Introduktion till språket**
 
