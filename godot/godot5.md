@@ -52,7 +52,7 @@ Det är en bra idé! Vi kan lägga till en visuell representation av ratten elle
        if speed != 0:
            var steering_wheel = get_tree().root.get_node("MainScene/CanvasLayer/SteeringWheel")  # Justera sökvägen om det behövs
            rotation += deg_to_rad(steering_wheel.rotation_degrees) * delta * sign(speed) * 0.5
-           
+
        # Uppdatera bilens rörelse
        velocity = Vector2(speed, 0).rotated(rotation)
        move_and_slide()
@@ -72,6 +72,22 @@ func update_steering_wheel():
 - **Återställning till mitten**: När inga svängknappar är nedtryckta, återgår `steering_angle` gradvis till 0 med hjälp av `move_toward`.
 - **Rattens rotation**: `update_steering_wheel()` kallar på `steering_angle` och justerar bildens rotation för att matcha aktuell rattvinkel.
 
+
+### Vill man fippla mer med styrningen?
+Omk du vill hantera framhjulsdrift kan du lägga till denna kod istället för uppdatera bilens rörelse
+```gd
+
+       # Styra bilen
+       if speed != 0:
+           var wheelbase = 100 # Avstånd mellan fram- och bakaxeln
+           var steering_wheel = get_tree().root.get_node("MainScene/CanvasLayer/SteeringWheel")  # Justera sökvägen om det behövs
+           var turning_radius = wheelbase / tan(deg_to_rad(steering_wheel.rotation_degrees)) if steering_wheel.rotation_degrees != 0 else INF
+		   var angular_velocity = speed / turning_radius  # Vinkelhastighet baserad på styrvinkeln och hastigheten
+		   rotation += angular_velocity * delta * sign(speed)
+
+		   # Justera positionen för att simulera framaxelstyrning
+		   var forward_vector = Vector2(cos(rotation), sin(rotation)) * speed * delta
+		   position += forward_vector
 ---
 
 Nu kommer rattbilden att visa vilken riktning bilen svänger i, och den återgår mjukt till mitten när spelaren slutar svänga. Detta ger en visuell representation av svängningen och en tydlig återkoppling när ratten släpps!
