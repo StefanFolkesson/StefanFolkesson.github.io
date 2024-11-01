@@ -1,72 +1,120 @@
-Här kommer en serie lektioner för att skapa en top-down bilstyrning i Godot. Vi börjar med grunderna och bygger successivt på för att skapa realistisk styrning och fysik för bilen.
+Självklart! Här kommer en sammanfattad och tydlig genomgång av hela lektionen för att skapa en top-down bil med växlingar, hastighetsjusteringar och UI-visning för aktuell växel.
 
 ---
 
-### Lektion 4: Skapa Grunderna för en Top-Down Bil (2 timmar)
+### Lektion: Skapa en Top-Down Bil med Växlingar och Växelvisning i Godot 4.0
 
-#### Steg 1: Skapa Bilscenen (20 minuter)
-1. **Skapa en ny scen och lägg till en bilnod**:
-   - Skapa en ny 2D-scen och lägg till en *CharacterBody2D*-nod. Namnge den “Car”.
-2. **Lägg till en Sprite för bilen**:
-   - Lägg till en *Sprite*-nod under *Car*-noden och välj en bild som representerar bilen (en bild sedd uppifrån).
-3. **Lägg till en CollisionShape2D**:
-   - Under *Car*-noden, lägg till en *CollisionShape2D*-nod och skapa en rektangulär form som täcker bilen.
+#### Steg 1: Skapa Bilens Scen och Lägg till Grundläggande Noder
+1. **Skapa en ny 2D-scen för bilen**:
+   - Skapa en **CharacterBody2D**-nod som huvudnod och döp scenen till "Car".
+   - Under **CharacterBody2D**, lägg till en **Sprite2D**-nod och välj en bild som representerar bilen (helst en sedd ovanifrån).
+   - Lägg också till en **CollisionShape2D**-nod under **CharacterBody2D** och sätt en rektangulär kollisionsform som täcker bilens sprite.
 
-#### Steg 2: Programmera Bilens Grundläggande Rörelse (30 minuter)
-1. **Skapa ett script för bilen**:
-   - Anslut ett nytt script till *Car*-noden, exempelvis *Car.gd*.
+2. **Spara scenen som "Car.tscn"** och gör den redo för att instansieras i en huvudscen.
 
-2. **Grundläggande styrning och rörelse**:
-   - Kopiera och klistra in koden nedan i scriptet för att ge bilen basrörelse och styrning:
+#### Steg 2: Lägg till Input Actions för Växling och Rörelse
+1. Gå till **Project > Project Settings > Input Map** och lägg till följande nya actions:
+   - `accelerate` – kopplad till **W**.
+   - `brake` – kopplad till **S**.
+   - `gear_up` – kopplad till **piltangent upp**.
+   - `gear_down` – kopplad till **piltangent ned**.
+   - `turn_right` och `turn_left` – kopplade till **D** respektive **A**.
 
-     ```gd
-     extends CharacterBody2D
+#### Steg 3: Skriv Skript för Bilens Rörelse och Växlingar
 
-     var speed = 0
-     var max_speed = 200
-     var acceleration = 50
-     var friction = 20
-     var turn_speed = 100
+Öppna **Car.gd** och skriv följande skript för att hantera bilens rörelse, växlingar och hastighet.
 
-     func _process(delta):
-         if Input.is_action_pressed("ui_up"):
-             speed += acceleration * delta
-         elif Input.is_action_pressed("ui_down"):
-             speed -= acceleration * delta
-         else:
-             speed = lerp(speed, 0, friction * delta)
+```gd
+extends CharacterBody2D
 
-         speed = clamp(speed, -max_speed, max_speed)
+var speed = 0.0
+var max_speed = 100.0
+var base_max_speed = 100.0  # Grundhastighet för första framåtväxeln
+var gear = 1  # Startväxeln är framåt
+var max_gear = 5  # Antal växlar (1-5 för framåt)
+var min_gear = -1  # Backväxel
+var acceleration = 100.0
+var friction = 50.0
+var turn_speed = 2.0
 
-         if speed != 0:
-             var direction = sign(speed)
-             if Input.is_action_pressed("ui_right"):
-                 rotation += direction * turn_speed * delta
-             elif Input.is_action_pressed("ui_left"):
-                 rotation -= direction * turn_speed * delta
+func _ready():
+    # Uppdatera växeltext när spelet startar
+    update_gear_display()
 
-         var velocity = Vector2(speed, 0).rotated(rotation)
-         move_and_slide(velocity)
-     ```
+func _process(delta):
+    # Växla upp och ned för att justera maxhastigheten
+    if Input.is_action_just_pressed("gear_up") and gear < max_gear:
+        gear += 1
+        update_gear_display()
+    elif Input.is_action_just_pressed("gear_down") and gear > min_gear:
+        gear -= 1
+        update_gear_display()
 
-3. **Testa rörelsen** – Tryck på **Play** för att testa bilens rörelse. Bilen bör nu kunna accelerera framåt och bakåt och svänga åt höger och vänster när den är i rörelse.
+    # Sätt maxhastigheten baserat på växeln
+    max_speed = base_max_speed * abs(gear)  # Positiv maxhastighet baserat på växeln
+    
+    # Accelerera och bromsa
+    if gear > 0:  # Framåtväxel
+        if Input.is_action_pressed("accelerate"):
+            speed += acceleration * delta
+        elif Input.is_action_pressed("brake"):
+            speed -= acceleration * delta
+        else:
+            speed = move_toward(speed, 0, friction * delta)  # Gradvis minskning av hastighet mot 0
+            
+        # Begränsa hastigheten till max_speed i framväxel
+        speed = clamp(speed, 0, max_speed)
+        
+    elif gear < 0:  # Backväxel
+        if Input.is_action_pressed("accelerate"):
+            speed -= acceleration * delta  # Omvänd acceleration för backning
+        elif Input.is_action_pressed("brake"):
+            speed += acceleration * delta
+        else:
+            speed = move_toward(speed, 0, friction * delta)  # Gradvis minskning av hastighet mot 0
 
-#### Steg 3: Justera Bilens Fysik och Kontroll (30 minuter)
-1. **Finjustera hastighet och friktion**:
-   - Experimentera med variablerna `max_speed`, `acceleration`, och `friction` för att få en bra känsla i styrningen.
+        # Begränsa hastigheten till -max_speed i backväxel
+        speed = clamp(speed, -max_speed, 0)
 
-2. **Lägg till visuella indikationer**:
-   - Om bilen ska sakta ner snabbare eller ha mer grepp, öka `friction`. För snabbare acceleration, öka `acceleration`.
+    # Styra bilen
+    if speed != 0:
+        var direction = sign(speed)
+        if Input.is_action_pressed("turn_right"):
+            rotation += direction * turn_speed * delta
+        elif Input.is_action_pressed("turn_left"):
+            rotation -= direction * turn_speed * delta
 
-#### Steg 4: Lägg till En Enkel Bana (40 minuter)
-1. **Skapa en bana**:
-   - Skapa en ny scen för banan. Lägg till en *TileMap*-nod och skapa en enkel väg med hjälp av tile-bilder.
+    # Uppdatera bilens rörelse
+    velocity = Vector2(speed, 0).rotated(rotation)
+    move_and_slide()
+```
 
-2. **Kollision för banan**:
-   - Lägg till en *StaticBody2D* och *CollisionShape2D* i banan för att lägga till kollisioner runt banan, så att bilen inte kan åka utanför.
+- **Hantering av fram- och backväxel**: Om `gear` är positivt, kan bilen accelerera framåt, medan ett negativt `gear` innebär backväxel.
+- **Friktion**: `move_toward` används för att gradvis sakta ner bilen när ingen knapp är nedtryckt.
+- **Uppdatering av `max_speed`**: Maxhastigheten baseras på växeln och anpassas varje gång du växlar upp eller ner.
 
-3. **Lägg till bilen i banan**:
-   - Gå tillbaka till bilscenen och spara den. Gå till banscenen och instansiera bilen som en nod i banan.
-4. **Testa körupplevelsen**:
-   - Kör spelet och justera bilens hastighet, acceleration och friktion för att skapa en mer realistisk körupplevelse.
+#### Steg 4: Lägg till Växelvisning i UI
 
+1. **Lägg till en CanvasLayer och Label**:
+   - I din huvudscen, lägg till en **CanvasLayer**-nod för att hantera UI-elementen.
+   - Under **CanvasLayer**, lägg till en **Label**-nod och namnge den "GearLabel".
+   - Placera **GearLabel** på en synlig plats, t.ex. längst upp till höger. Ändra texten till något initialt, t.ex. "Växel: N".
+
+2. **Uppdatera Växelvisningen i Koden**:
+   - Lägg till följande funktion i **Car.gd** för att uppdatera växeln på skärmen:
+
+   ```gd
+   func update_gear_display():
+       var gear_label = get_tree().root.get_node("Main/CanvasLayer/GearLabel")  # Anpassa sökvägen om nödvändigt
+       if gear > 0:
+           gear_label.text = "Växel: " + str(gear)
+       elif gear < 0:
+           gear_label.text = "Växel: R"  # Använd "R" för backväxel
+       else:
+           gear_label.text = "Växel: N"  # Neutral om du skulle ha det som ett läge
+   ```
+
+   - Funktionen `update_gear_display()` hämtar `GearLabel` och uppdaterar texten baserat på aktuell växel. Funktionen kallas varje gång växeln ändras.
+
+### Resultat
+Nu har du en top-down bil med fungerande framåt- och backväxlar, gradvis inbromsning och en UI-visning av aktuell växel.
