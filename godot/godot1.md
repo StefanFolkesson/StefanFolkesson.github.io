@@ -18,7 +18,7 @@ Absolut! Här kommer en detaljerad plan för första lektionen.
 3. **Spara scenen** – Ge scenen ett namn, t.ex. "Main" eller "StartScene".
 
 #### Steg 3: Skapa en Spelkaraktär (30 minuter)
-1. **Lägg till en karaktärs-nod** – Skapa en *KinematicBody2D* nod och namnge den som "Player".
+1. **Lägg till en karaktärs-nod** – Skapa en *CharacterBody2D* nod och namnge den som "Player".
 2. **Lägg till en Sprite till Player-noden** – Ladda upp en bild för karaktären.
 3. **Lägg till en CollisionShape2D** – Detta gör att karaktären kan kollidera med andra objekt. Skapa en enkel form (t.ex. en rektangel) som passar runt din sprite.
 

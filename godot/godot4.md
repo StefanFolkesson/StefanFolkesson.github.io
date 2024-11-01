@@ -6,7 +6,7 @@ Här kommer en serie lektioner för att skapa en top-down bilstyrning i Godot. V
 
 #### Steg 1: Skapa Bilscenen (20 minuter)
 1. **Skapa en ny scen och lägg till en bilnod**:
-   - Skapa en ny 2D-scen och lägg till en *KinematicBody2D*-nod. Namnge den “Car”.
+   - Skapa en ny 2D-scen och lägg till en *CharacterBody2D*-nod. Namnge den “Car”.
 2. **Lägg till en Sprite för bilen**:
    - Lägg till en *Sprite*-nod under *Car*-noden och välj en bild som representerar bilen (en bild sedd uppifrån).
 3. **Lägg till en CollisionShape2D**:
@@ -20,7 +20,7 @@ Här kommer en serie lektioner för att skapa en top-down bilstyrning i Godot. V
    - Kopiera och klistra in koden nedan i scriptet för att ge bilen basrörelse och styrning:
 
      ```gd
-     extends KinematicBody2D
+     extends CharacterBody2D
 
      var speed = 0
      var max_speed = 200
