@@ -1,25 +1,21 @@
-Här kommer en serie på tre lektioner som steg-för-steg förklarar och lär ut denna kod för en nybörjare i Godot. Vi tar det steg för steg och täcker grunderna i Godot, variabelhantering, logik för bilens rörelse och styrning, samt UI-element.
+### Lektion 1: Skapa Bilens Grundrörelse
 
----
+**Mål:** Lära oss att hantera acceleration, bromsning och en grundläggande hastighetsbegränsning.
 
-### Lektion 1: Introduktion till Variabler och Input i Godot
-
-**Mål:** I den här lektionen lär vi oss om variabler, hur man definierar dem och använder dem för att styra bilens acceleration och växlingar.
-
-#### Steg 1: Skapa en ny Scen och Bilens Grundstruktur
+#### Steg 1: Skapa och Förbered Bilscenen
 1. **Skapa en ny 2D-scen för bilen**:
-   - I Godot, skapa en ny **2D-scen** och lägg till en **CharacterBody2D**-nod som bilens huvudnod.
-   - Namnge scenen "Car" och spara den som en separat fil, t.ex., "Car.tscn".
+   - Öppna Godot och skapa en ny **2D-scen**.
+   - Lägg till en **CharacterBody2D**-nod och namnge den till "Car". Spara scenen som "Car.tscn".
 
-2. **Lägg till en Sprite för bilen**:
-   - Lägg till en **Sprite2D** under **CharacterBody2D** och ladda upp en bilbild som representerar bilen.
+2. **Lägg till en Sprite**:
+   - Under **CharacterBody2D**, lägg till en **Sprite2D** och ladda upp en bild som representerar bilen.
 
-3. **Lägg till Script**:
-   - Högerklicka på "Car"-noden och välj **Attach Script** för att skapa ett nytt skript. Använd GDScript och döp det till "Car.gd".
+3. **Lägg till ett Script**:
+   - Högerklicka på "Car"-noden och välj **Attach Script**. Namnge det "Car.gd" och skapa.
 
-#### Steg 2: Lära oss Variabler och @export
-1. **Skapa och exportera variabler**:
-   - Vi börjar med att lägga till variabler som beskriver bilens hastighet, maxhastighet, acceleration, och friktion. Använd `@export` så att de blir justerbara från Godots editor.
+#### Steg 2: Lägg till Variabler och Input
+1. **Definiera variabler för rörelse**:
+   - I skriptet, lägg till följande variabler för att styra bilens hastighet, maxhastighet, acceleration och friktion.
 
    ```gd
    extends CharacterBody2D
@@ -27,36 +23,38 @@ Här kommer en serie på tre lektioner som steg-för-steg förklarar och lär ut
    @export var max_speed := 100.0
    @export var acceleration := 100.0
    @export var friction := 50.0
-   var speed := 0.0  # Bilens aktuella hastighet
+   var speed := 0.0  # Den aktuella hastigheten för bilen
    ```
 
-2. **Förklara variablerna**:
-   - **`max_speed`**: Bilens maxhastighet.
-   - **`acceleration`**: Hur snabbt bilen kan öka sin hastighet.
-   - **`friction`**: Används för att gradvis sakta ner bilen när man släpper accelerationen.
+2. **Skapa Input-actions**:
+   - Gå till **Project > Project Settings > Input Map** och skapa två actions:
+     - `accelerate`: koppla till `W`
+     - `brake`: koppla till `S`
 
-#### Steg 3: Använda Input för Acceleration och Broms
-1. **Definiera input för att styra bilen**:
-   - Gå till **Project > Project Settings > Input Map** och skapa två nya actions: `accelerate` och `brake`. Koppla dem till `W` (accelerate) och `S` (brake).
-   
-2. **Lägg till kod för att öka hastigheten**:
-   - I `_process(delta)`, lägg till kod som styr hur hastigheten förändras baserat på input.
+#### Steg 3: Implementera Grundläggande Rörelse
+1. **Skriv kod för acceleration och bromsning**:
+   - I `_process(delta)`, använd följande kod för att justera bilens hastighet beroende på om `accelerate` eller `brake` är tryckt.
 
    ```gd
    func _process(delta: float) -> void:
+       # Hantera acceleration och bromsning
        if Input.is_action_pressed("accelerate"):
            speed += acceleration * delta
        elif Input.is_action_pressed("brake"):
            speed -= acceleration * delta
        else:
-           # Gradvis minskning av hastigheten mot 0
+           # Gradvis sänkning av hastigheten när ingen knapp är tryckt
            speed = move_toward(speed, 0, friction * delta)
        
-       # Begränsa hastigheten till max_speed
-       speed = clamp(speed, 0, max_speed)
+       # Begränsa hastigheten
+       speed = clamp(speed, -max_speed, max_speed)
+
+       # Uppdatera bilens position i riktning mot rotationen
+       var forward_movement = Vector2(cos(rotation), sin(rotation)) * speed * delta
+       position += forward_movement
    ```
 
-3. **Testa spelet**:
-   - Kör spelet och testa om bilen accelererar och bromsar som förväntat. Förklara `delta` som tidssteget mellan frames för smidiga rörelser.
+2. **Testa spelet**:
+   - Kör scenen. Du ska nu kunna accelerera och bromsa bilen med `W` och `S`.
 
 ---

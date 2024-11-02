@@ -1,42 +1,61 @@
+### Lektion 3: Lägg till UI och Simulera Framaxelstyrning
 
-### Lektion 3: Lägga till UI och Fullständig Bilrörelse
+**Mål:** Lägg till UI för att visa växel och rattvinkel, och justera bilens rotation för att simulera framaxelstyrning.
 
-**Mål:** Vi integrerar UI för att visa aktuell växel och rattvinkel, samt justerar bilens position.
+#### Steg 1: Lägg till UI-element
+1. **Skapa UI-element**:
+   - Lägg till en **CanvasLayer**-nod och lägg till en **Label** för växel och en **Sprite2D** för rattens vinkel.
 
-#### Steg 1: Lägg till UI-element för Växel och Ratt
-1. **Skapa UI-noder**:
-   - Lägg till en **CanvasLayer**-nod med en **Label** för växeln och en **Sprite2D** för rattvinkeln.
+2. **Spara referenser till UI-elementen**:
+   - Lägg till referenser till `gear_label` och `steering_wheel` i `_ready` för enklare åtkomst.
 
-2. **Uppdatera UI för Växel och Ratt**:
-   - Hämta referenser till `gear_label` och `steering_wheel` och använd dem för att uppdatera UI.
+   ```gd
+   var gear_label
+   var steering_wheel
+
+   func _ready() -> void:
+       gear_label = get_node("CanvasLayer/GearLabel")  # kanske behöver uppdatera  sökvägen
+       steering_wheel = get_node("CanvasLayer/SteeringWheel")
+       update_gear_display()
+   ```
+
+#### Steg 2: Visa Växel och Styrning i UI
+1. **Uppdatera UI**:
+   - Lägg till kod för att uppdatera växel och rattvinkel i UI:
 
    ```gd
    func update_gear_display() -> void:
-       gear_label.text = "Växel: " + (str(gear) if gear > 0 else "R")
+       if gear > 0:
+           gear_label.text = "Växel: " + str(gear)
+       elif gear < 0:
+           gear_label.text = "Växel: R"
+       else:
+           gear_label.text = "Växel: N"
 
    func update_steering_wheel() -> void:
        steering_wheel.rotation_degrees = steering_angle * 2
    ```
 
-#### Steg 2: Fullständig Rörelselogik
-1. **Beräkna vinkelhastighet och framåtrörelse**:
-   - Använd `steering_angle` och `speed` för att justera rotation och position baserat på bilens framaxel.
+2. **Använd UI-funktionerna i `_process`**:
+   - Lägg till `update_gear_display()` och `update_steering_wheel()` i `_process` så att UI hålls uppdaterat.
+
+#### Steg 3: Simulera Framaxelstyrning
+1. **Lägg till variabel för hjulbas**:
+   - Lägg till en variabel för avståndet mellan fram- och bakaxeln.
 
    ```gd
-   func update_position_and_rotation(delta: float) -> void:
-       if speed != 0:
-           var turning_radius = wheelbase / tan(deg2rad(steering_angle)) if steering_angle != 0 else INF
-           var angular_velocity = speed / turning_radius
-           rotation += angular_velocity * delta * sign(speed)
-           position += Vector2(cos(rotation), sin(rotation)) * speed * delta
+   @export var wheelbase := 100.0
    ```
 
-2. **Använd alla funktioner**:
-   - Anropa alla funktioner i `_process` för att uppdatera bilen.
+2. **Beräkna rotation baserat på styrvinkel**:
+   - Använd `steering_angle` och `speed` för att uppdatera bilens rotation.
 
-3. **Testa fullständig rörelse**:
-   - Kör spelet och se om alla funktioner fungerar tillsammans.
+   ```gd
+   if speed != 0:
+       var turning_radius = wheelbase / tan(deg_to_rad(steering_angle)) if steering_angle != 0 else INF
+       var angular_velocity = speed / turning_radius
+       rotation += angular_velocity * delta * sign(speed)
+   ```
 
----
-
-Dessa tre lektioner bör ge en nybörjare en bra förståelse för hur man skapar bilrörelser i Godot och använder UI för att visa viktiga uppgifter som växel och rattvinkel!
+3. **Testa spelet**:
+   - Kör
