@@ -1,4 +1,3 @@
-# H1
 ### Lektion 1: Introduktion till Godot 4.0 och Grunderna i 2D-spelutveckling (2 timmar)
 
 #### Steg 1: Bekanta dig med Godot 4.0:s Gränssnitt (20 minuter)
