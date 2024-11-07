@@ -58,3 +58,4 @@
    - Kör scenen. Du ska nu kunna accelerera och bromsa bilen med `W` och `S`.
 
 ---
+[Bil lektion 2](godot_bil2.md)

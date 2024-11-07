@@ -1,3 +1,4 @@
+# H1
 ### Lektion 1: Introduktion till Godot 4.0 och Grunderna i 2D-spelutveckling (2 timmar)
 
 #### Steg 1: Bekanta dig med Godot 4.0:s Gränssnitt (20 minuter)
@@ -95,3 +96,4 @@
 ---
 
 Det här avslutar den första lektionen. Nästa gång kommer vi att bygga vidare på detta genom att lägga till interaktiva objekt som karaktären kan samla upp och placera i ett enkelt inventarie.
+[Lektion 2](godot2.md)

@@ -73,3 +73,4 @@
    - Kör spelet och testa om styrning och växling fungerar som förväntat.
 
 ---
+[Bil lektion 3](godot_bil3.md)

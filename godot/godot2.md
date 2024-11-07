@@ -112,3 +112,5 @@ Här kommer lektion 2, som bygger vidare på grunderna och lägger till interakt
 
 ---
 Nu har du en grundläggande insamlingsmekanik och ett inventariesystem som visar insamlade föremål! Nästa lektion kan vi lägga till fler avancerade funktioner, såsom att använda föremål eller visa detaljerad information om dem.
+
+[Lektion 3](godot3.md)
