@@ -63,6 +63,7 @@ Här kommer lektion 2, som bygger vidare på grunderna och lägger till interakt
 1. **Lägg till en inventarie-ruta i scenen**:
    - Under huvudscenen, lägg till en **Control**-nod och namnge den `UI`.
    - Under `UI`, skapa en **VBoxContainer** eller **HBoxContainer** för att hålla insamlade föremål.
+   - Och Döp det till Inventory
 
 2. **Programmera inventarielogik i `Player`**:
    - Öppna `Player.gd`-skriptet och lägg till en array för inventariet:
@@ -81,7 +82,9 @@ Här kommer lektion 2, som bygger vidare på grunderna och lägger till interakt
      ```gdscript
      func update_inventory_display() -> void:
          var inventory_ui = $UI/Inventory
-         inventory_ui.clear_children()  # Rensa föregående föremål
+         for child in inventory_ui.get_children():
+            inventory_ui.remove_child(child)
+            child.queue_free()         inventory_ui.clear_children()  # Rensa föregående föremål
          for item_texture in inventory:
              var icon = Sprite2D.new()
              icon.texture = item_texture

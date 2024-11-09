@@ -1,5 +1,3 @@
-Självklart! Här kommer lektion 3, där vi utökar spelet med användbara föremål och feedback till spelaren.
-
 ---
 
 ### Lektion 3: Användbara Föremål och Feedback till Spelaren (2 timmar)
@@ -56,7 +54,7 @@ Självklart! Här kommer lektion 3, där vi utökar spelet med användbara före
 
      func increase_speed() -> void:
          speed *= 1.5  # Öka hastigheten tillfälligt
-         yield(get_tree().create_timer(5.0).timeout)
+         await get_tree().create_timer(5.0).timeout
          speed /= 1.5  # Återställ hastigheten
      ```
 
@@ -104,7 +102,7 @@ Självklart! Här kommer lektion 3, där vi utökar spelet med användbara före
      func increase_speed() -> void:
          $Sprite2D.modulate = Color(1, 0.5, 0.5)  # Ändrar färgen
          speed *= 1.5
-         yield(get_tree().create_timer(5.0).timeout)
+         await get_tree().create_timer(5.0).timeout
          speed /= 1.5
          $Sprite2D.modulate = Color(1, 1, 1)  # Återställ färgen
      ```
@@ -122,4 +120,5 @@ Självklart! Här kommer lektion 3, där vi utökar spelet med användbara före
 
 ---
 
-Efter denna lektion kommer ditt spel ha ett inventariesystem där spelaren kan samla, använda, och se effekterna av olika föremål!
+Efter denna lektion kommer ditt spel ha ett inventariesystem där spelaren kan samla, använda och se effekterna av olika föremål! 
+[Lektion 4?](godot4.md)

@@ -56,24 +56,25 @@
    - Öppna det skapade skriptet och ersätt innehållet med följande kod:
 
      ```gdscript
-     extends CharacterBody2D
+extends CharacterBody2D
 
-     @export var speed := 200.0  # Justerbar hastighet
+@export var speed := 200.0  # Justerbar hastighet
 
-     func _process(delta):
-         var velocity = Vector2.ZERO  # Rörelsevektor
+func _process(delta):
+	var input_vector = Vector2.ZERO  # Rörelsevektor
 
-         if Input.is_action_pressed("ui_right"):
-             velocity.x += 1
-         if Input.is_action_pressed("ui_left"):
-             velocity.x -= 1
-         if Input.is_action_pressed("ui_down"):
-             velocity.y += 1
-         if Input.is_action_pressed("ui_up"):
-             velocity.y -= 1
+	if Input.is_action_pressed("ui_right"):
+		input_vector.x += 1
+	if Input.is_action_pressed("ui_left"):
+		input_vector.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		input_vector.y += 1
+	if Input.is_action_pressed("ui_up"):
+		input_vector.y -= 1
 
-         velocity = velocity.normalized() * speed
-         velocity = move_and_slide(velocity)
+	input_vector = input_vector.normalized() * speed
+	velocity = input_vector  # Tilldela input_vector till den inbyggda velocity-egenskapen
+	move_and_slide()  # Anropa move_and_slide utan argument
      ```
 
 3. **Testa rörelsen**:
