@@ -1,4 +1,3 @@
----
 
 ### Lektion 3: Användbara Föremål och Feedback till Spelaren (2 timmar)
 
