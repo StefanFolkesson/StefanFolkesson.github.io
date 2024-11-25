@@ -1,39 +1,21 @@
-### **Uppgift 4: Enkel bankapplikation (A-nivå)**  
-**Mål:** Användning av funktioner, loopar och grundläggande objektorientering.
+### **Uppgift 4: Textanalys (A-nivå)**  
+**Mål:** Arbeta med strängar, loopar och villkor.
 
-Skriv ett program som simulerar en enkel bankapplikation:
-1. Användaren kan skapa ett konto med ett startbelopp.
-2. Användaren kan välja följande alternativ i en meny:
-   - Sätta in pengar.
-   - Ta ut pengar.
-   - Visa saldo.
-   - Avsluta programmet.
-3. Hantera fel, t.ex. försök att ta ut mer pengar än saldot.  
+Skriv ett program som:
+1. Frågar användaren efter en mening.
+2. Analyserar och skriver ut:
+   - Antal tecken (inklusive mellanslag).
+   - Antal ord.
+   - Antal vokaler (a, e, i, o, u).
+   - Antal gånger en specifik bokstav förekommer (användaren anger bokstaven).  
 
 **Exempel:**  
 ```
-Välkommen till banken!  
-1. Skapa konto  
-2. Sätt in pengar  
-3. Ta ut pengar  
-4. Visa saldo  
-5. Avsluta  
+Ange en mening: Programmering är roligt!  
+Antal tecken: 23  
+Antal ord: 3  
+Antal vokaler: 8  
 
-Ange val: 1  
-Ange startbelopp: 1000  
-
-Ange val: 2  
-Hur mycket vill du sätta in? 500  
-Saldo: 1500  
-
-Ange val: 3  
-Hur mycket vill du ta ut? 2000  
-Fel: Du har inte tillräckligt med pengar.  
-
-Ange val: 4  
-Saldo: 1500  
-
-Ange val: 5  
-Tack för att du använde banken!
+Vilken bokstav vill du räkna? r  
+Antal gånger "r" förekommer: 4
 ```
-
