@@ -1,4 +1,4 @@
-### Uppgift 2: Summera tal i en lista
+### Övning 2: Summera tal i en lista
 **Beskrivning:** Skriv ett program som tar en lista av tal och beräknar summan av alla tal i listan.
 
 #### Lösning:

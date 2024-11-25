@@ -1,6 +1,7 @@
+
 Här är en annan mer avancerad uppgift som använder iteration, listor och stränghantering, vilket kan ge dina elever en bra utmaning.
 
-### Uppgift 3: Palindromdetektor
+### Övning 3: Palindromdetektor
 **Beskrivning:** Skriv ett program som ber användaren att mata in en sträng och sedan kontrollerar om strängen är ett palindrom. Ett palindrom är ett ord, en fras eller en sekvens som läses likadant framifrån som bakifrån (t.ex. "radar", "level").
 
 #### Lösning:

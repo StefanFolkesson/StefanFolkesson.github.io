@@ -1,5 +1,5 @@
 
-### Uppgift 1: Räkna upp talen
+### Övning 1: Räkna upp talen
 **Beskrivning:** Skriv ett program som frågar användaren efter ett tal. Programmet ska sedan skriva ut alla tal från 1 upp till det givna talet.
 
 #### Lösning:
