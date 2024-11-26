@@ -25,6 +25,8 @@ Här kommer en första tvåtimmarslektion som introducerar dig till Unity och hu
 2. **Skapa en GameObject för din karaktär:**
    - Högerklicka i **Hierarchy** och välj **Create Empty**.
    - Namnge det nya objektet till "Player".
+   - Lägg till en Sprite Renderer på objektet.
+   - Lägg till en Collider på objektet.
    - Dra och släpp din sprite till **Player**-objektet i **Inspector** under **Sprite Renderer**.
 
 ##### **Steg 2: Lägg till en Rigidbody2D**
