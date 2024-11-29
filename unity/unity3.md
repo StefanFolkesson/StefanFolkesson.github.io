@@ -19,6 +19,7 @@ I denna lektion kommer vi att:
    - Gå till dina insamlingsbara objekt (t.ex. "Collectible"-objektet från tidigare lektioner) och lägg till en ny **public Sprite** i `Collectible.cs`-skriptet. Detta låter oss tilldela en bild för varje objekt.
 
 ```csharp
+using UnityEngine;
 public class Collectible : MonoBehaviour
 {
     public Sprite itemIcon;  // Bild för objektet
@@ -30,7 +31,7 @@ public class Collectible : MonoBehaviour
             Inventory playerInventory = other.GetComponent<Inventory>();
             if (playerInventory != null)
             {
-                playerInventory.AddItem(this);  // Skickar hela Collectible-objektet
+                playerInventory.AddItem(gameObject);  // Skickar hela Collectible-objektet
                 gameObject.SetActive(false);
             }
         }
@@ -60,18 +61,18 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<Collectible> collectedItems = new List<Collectible>();
+    public List<GameObject> collectedItems = new List<GameObject>();
     public GameObject inventoryPanel;  // Panel där ikoner visas
     public GameObject inventorySlotPrefab;  // Prefab för ikoner
 
-    public void AddItem(Collectible item)
+    public void AddItem(GameObject item)
     {
         collectedItems.Add(item);
         Debug.Log(item.name + " tillagd i inventariet.");
 
         // Skapa en ny ikon i UI
         GameObject newSlot = Instantiate(inventorySlotPrefab, inventoryPanel.transform);
-        newSlot.GetComponent<UnityEngine.UI.Image>().sprite = item.itemIcon;  // Tilldela objektets bild
+        newSlot.GetComponent<UnityEngine.UI.Image>().sprite = item.GetComponent<Collectible>().itemIcon;  // Tilldela objektets bild
     }
 }
 ```
@@ -104,7 +105,7 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    public Collectible item;  // Objektet som ikonen representerar
+    public GameObject item;  // Objektet som ikonen representerar
     private Button button;
 
     void Start()
@@ -140,7 +141,7 @@ public class InventorySlot : MonoBehaviour
 GameObject newSlot = Instantiate(inventorySlotPrefab, inventoryPanel.transform);
 InventorySlot slotScript = newSlot.GetComponent<InventorySlot>();
 slotScript.item = item;  // Kopplar objektet till sloten
-newSlot.GetComponent<UnityEngine.UI.Image>().sprite = item.itemIcon;
+newSlot.GetComponent<UnityEngine.UI.Image>().sprite = item.GetComponent<Collectible>().itemIcon;  // Tilldela objektets bild
 ```
 
 ##### **Steg 2: Lägg till fler objekt och funktionalitet**

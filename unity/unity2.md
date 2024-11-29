@@ -82,15 +82,15 @@ Unitys UI-system låter dig skapa användargränssnitt som visar information til
    - Ändra Canvasens **Render Mode** till "Screen Space - Overlay" i **Inspector**.
 
 2. **Skapa en Panel för inventariet:**
-   - Inuti Canvasen, högerklicka och välj **UI > Panel**. Detta blir vår inventariepanel.
-   - Namnge panelen "InventoryPanel" och justera storleken så att den passar bra i ena hörnet av skärmen.
+   - Markera Canvasen i hirarkin, högerklicka och välj **UI > Panel**. Detta blir vår inventariepanel.
+   - Namnge panelen "InventoryPanel" och justera storleken så att den passar bra i ena hörnet av canvasen.
    - Ändra panelens bakgrundsfärg till något neutralt eller transparent i **Inspector** om du vill.
 
 ##### **Steg 2: Skapa Text-UI för att visa objekt**
 1. **Lägg till en Text för objekt:**
-   - Inuti **InventoryPanel**, högerklicka och välj **UI > Text**.
+   - Inuti **InventoryPanel**, högerklicka och välj **UI > Legacy > Text**.
    - Namnge detta textfält "ItemText".
-   - Justera positionen och storleken på texten så att det ser bra ut i panelen.
+   - Justera positionen och storleken på texten så att det ser bra ut i panelen. Tänk på att öka höjden för flera rader.
 
 2. **Anslut Text-UI till ett nytt skript:**
    - Skapa ett nytt skript som heter `InventoryUI`.
