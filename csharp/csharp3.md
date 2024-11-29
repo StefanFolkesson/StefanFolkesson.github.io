@@ -172,19 +172,22 @@ För att omsätta dessa teorier i praktiken kan du göra följande övningar:
 
 1. **Skapa en klass:**
    - Definiera en klass `Car` med attribut som `brand`, `model` och `year`. Skapa metoder som låter användaren köra och stanna bilen.
+   `Du startar bilen`, `Bilen rör sig frammåt`, etc...
 
-1.5 **Skapa fler variabler**
-    - Definera en motor som är en egen klass med attributen `växel`,`varv`,`på`.
+2. **Skapa en till klass**
+    - Definera en motor som är en egen klass med attribut som `växel`,`varvtal`,`på`.
+    - Motorn skall ha metoder som hanterar motorn och växlar.
+    - Motorn skall ha metoder som visa status.
+    `Motorn är på och växel 3 är i`,`Du växlar upp`,etc..
     - Motorn skall vara en del av bilen.
-    - Bilen skall ha metoder som hanterar motorn och växlar.
 
-2. **Använd inkapsling:**
-   - Modifiera din `Car`-klass genom att göra fälten privata och skapa egenskaper för att få och sätta värdena på dessa fält.
+3. **Använd inkapsling:**
+   - Modifiera din `Car` och `Motor`-klass genom att göra fälten privata och skapa egenskaper för att få och sätta värdena på dessa fält.
 
-3. **Implementera arv och polymorfism:**
+4. **Implementera arv och polymorfism:**
    - Skapa en superklass `Vehicle` och låt `Car` ärva från `Vehicle`. Skapa en metod i `Vehicle` som överskrivs i `Car`, t.ex. en metod som beskriver fordonets rörelse.
 
-4. **Statisk medlem:**
+5. **Statisk medlem:**
    - Lägg till en statisk metod i `Car` som returnerar antalet bilar som har skapats.
 
 ---
