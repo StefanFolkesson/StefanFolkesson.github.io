@@ -155,6 +155,7 @@ Här är några förslag på övningar för att praktisera undantagshantering:
    - Skapa ett program som ber användaren mata in ett heltal och försök sedan att dela det med ett annat heltal som användaren matar in. Hantera undantag som kan uppstå om användaren matar in ogiltiga data (t.ex. `FormatException` när ett tal förväntas men användaren skriver in en sträng) eller försöker dela med noll.
 
    **Exempel:**
+   
    ```csharp
    try {
        Console.WriteLine("Mata in ett tal:");
