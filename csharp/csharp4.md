@@ -155,14 +155,12 @@ Här är några förslag på övningar för att praktisera undantagshantering:
    - Skapa ett program som ber användaren mata in ett heltal och försök sedan att dela det med ett annat heltal som användaren matar in. Hantera undantag som kan uppstå om användaren matar in ogiltiga data (t.ex. `FormatException` när ett tal förväntas men användaren skriver in en sträng) eller försöker dela med noll.
 
    **Exempel:**
-   
-   ```csharp
+
+```csharp
    try {
        Console.WriteLine("Mata in ett tal:");
        int num1 = int.Parse(Console.ReadLine());
-       Console.WriteLine("
-
-Mata in ett annat tal:");
+       Console.WriteLine("Mata in ett annat tal:");
        int num2 = int.Parse(Console.ReadLine());
 
        int result = num1 / num2;
@@ -174,7 +172,7 @@ Mata in ett annat tal:");
    } catch (Exception e) {
        Console.WriteLine("Ett oväntat fel inträffade: " + e.Message);
    }
-   ```
+```
 
 2. **Användning av `finally`:**
    - Skriv ett program som öppnar en fil och läser dess innehåll. Se till att filen alltid stängs, oavsett om ett undantag inträffar eller inte, genom att använda `finally`.
