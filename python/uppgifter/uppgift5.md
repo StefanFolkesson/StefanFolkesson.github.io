@@ -10,7 +10,7 @@ Användaren skall kunna:
 
 **Exempel:**  
 ```
-Ange en kodad mening: 'kred'
+Ange en kodad mening: 'khod'
 Nyckel: 3
 Avkodad text: 'hela'
 ```
