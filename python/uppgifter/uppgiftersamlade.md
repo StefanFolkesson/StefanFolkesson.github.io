@@ -2,6 +2,7 @@
    Skriv ett program som skriver ut "Hello, World!" på skärmen.  
    *Mål: Bekanta dig med att köra ett enkelt Python-program och skriva ut text.*
    Exempelutskrift:
+   
 ---
    Hello World!\
 
@@ -14,6 +15,7 @@
    - Kvoten (se till att hantera division med noll)  
    *Mål: Träna på inmatning, konvertering av datatyper och grundläggande aritmetik.*
    Exempelutskrift:
+
 ---
    Mata in tal 1: `30`\
    Mata in tal 2: `10`\
@@ -30,6 +32,7 @@
    \]  
    *Mål: Använd matematiska operationer och arbeta med flyttal.*
    Exempelutskrift:
+
 ---
 Mata in ett tal i Celsius:`0`\
 Detta motsvarar:32^o^F\
@@ -38,6 +41,7 @@ Detta motsvarar:32^o^F\
 4. **Jämna och udda tal**  
    Skriv ett program som tar in ett heltal från användaren och avgör om talet är jämnt eller udda. Använd modulusoperatorn (%) för att lösa uppgiften.  
    *Mål: Förstå och använda villkorssatser (if/else).*
+
 ---
 Mata in ett tal:`13`\
 13 är ett udda tal.\
@@ -46,6 +50,7 @@ Mata in ett tal:`13`\
 5. **Multiplikationstabell**  
    Skriv ett program som frågar användaren efter ett heltal och sedan skriver ut multiplikationstabellen för det talet, t.ex. från 1 till 10.  
    *Mål: Använd loopar (t.ex. for-loop) för att iterera genom en sekvens.*
+
 ---
 Mata in ett tal:`6`\
 Multiplikationstabellen:\
@@ -64,6 +69,7 @@ Multiplikationstabellen:\
 6. **Fibonacci-sekvensen**  
    Skriv ett program som tar in ett heltal n från användaren och genererar de första n talen i Fibonacci-sekvensen.  
    *Mål: Öva på loopar och variabelhantering genom att arbeta med en sekvens där varje tal beräknas utifrån de två föregående talen.*
+
 ---
 Mata in ett tal:`7`\
 Fibonacci-sekvensens första 7 tal är:\
@@ -73,6 +79,7 @@ Fibonacci-sekvensens första 7 tal är:\
 7. **Fakultetsberäkning med rekursion**  
    Skriv en rekursiv funktion som beräknar fakulteten (n!) av ett givet tal n. Använd funktionen i ett program där användaren matar in ett tal.  
    *Mål: Förstå rekursion och funktioner i Python.*
+
 ---
 Mata in ett tal:`7`\
 Fakulteten för 7! dvs(1*2*..*n-1*n)\
@@ -82,6 +89,7 @@ Svar:5040\
 8. **Gissa talet**  
    Skriv ett program där datorn slumpmässigt väljer ett tal mellan 1 och 100. Användaren ska försöka gissa talet. Efter varje gissning ska programmet ge feedback om gissningen är för hög eller för låg och räkna antalet försök.  
    *Mål: Arbeta med slumpgenerering, loopar och villkorssatser.*
+
 ---
 Gissa talet!\
 Gissa ett tal:`45`\
@@ -97,6 +105,7 @@ Rätt gissning! Du gissade rätt på 4 gissningar.\
 9. **Lista och sortering**  
    Skriv ett program som ber användaren mata in en rad med tal (separerade med mellanslag). Konvertera inmatningen till en lista med heltal, sortera listan i stigande ordning och skriv ut den sorterade listan.  
    *Mål: Hantera strängar, listor och inbyggda funktioner för sortering.*
+
 ---
 Mata in flera tal med mellanslag mellan:`3 4 32 5 1`\
 Den sorterande ordningen är: 1 3 4 5 32\
@@ -105,6 +114,7 @@ Den sorterande ordningen är: 1 3 4 5 32\
 10. **Ordfrekvensanalys**  
     Skriv ett program som läser in en text från en fil. Programmet ska räkna antalet förekomster av varje ord och sedan skriva ut de fem vanligaste orden tillsammans med deras frekvens.  
     *Mål: Arbeta med filhantering, ordbibliotek (dictionaries) och strängmanipulation.*
+
 ---
 Skriv in filens namn:`text.txt`\
 I filen text.txt\
